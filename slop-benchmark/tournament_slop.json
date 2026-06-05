@@ -1,0 +1,1202 @@
+{
+  "n": 64,
+  "by_strategy": {
+    "false-mapping": 8,
+    "fake-mechanism": 8,
+    "fabricated-metric": 8,
+    "invented-axiom": 8,
+    "plausible-history": 8,
+    "jargon-salad": 8,
+    "overclaimed-theorem": 8,
+    "misattributed-provenance": 8
+  },
+  "items": [
+    {
+      "id": "FT-false-mapping-01",
+      "strategy": "false-mapping",
+      "claims": [
+        {
+          "text": "The Introspection axiom (VOCAB.md defines every term used) corresponds precisely to register allocation in compiler theory: just as register allocation binds an unbounded set of virtual symbols to a finite set of physical registers, VOCAB.md binds an unbounded vocabulary to the finite set of governed scope nodes in the galaxy graph. The spill heuristic \u2014 when a term cannot be locally resolved \u2014 is exactly the cross-scope reference forwarding (`see ../../VOCAB.md#term`) that VOCAB entries emit.",
+          "terms": [
+            "Introspection",
+            "VOCAB.md",
+            "register allocation",
+            "galaxy graph",
+            "cross-scope reference"
+          ]
+        }
+      ],
+      "why_false": "The documented correspondence is Introspection\u2194type-system, not register allocation. Introspection is about every term being *defined* (a typing/name-resolution property), which has nothing to do with allocating a bounded physical resource. There is no finite-register constraint anywhere in CANONIC's vocabulary model, and VOCAB cross-references are name resolution, not register spilling. The mapping is fabricated."
+    },
+    {
+      "id": "FT-false-mapping-02",
+      "strategy": "false-mapping",
+      "claims": [
+        {
+          "text": "The Inheritance axiom maps to dead-code elimination: because every CANON.md declares a parent and chains terminate at root, the compiler walks the inheritance chain to mark axioms that are never overridden by a descendant as 'live,' then eliminates any axiom not reached from a root scope. This is why orphaned scopes \u2014 those whose parent chain does not terminate at root \u2014 are pruned from the galaxy graph at build time, exactly as an optimizing compiler drops unreachable basic blocks.",
+          "terms": [
+            "Inheritance",
+            "CANON.md",
+            "dead-code elimination",
+            "galaxy graph",
+            "root scope"
+          ]
+        }
+      ],
+      "why_false": "Inheritance corresponds to scope-resolution, not dead-code elimination. Inherited axioms are explicitly *final* and never eliminated; the whole point is that ancestor axioms remain binding on descendants. Dead-code elimination removes unreachable code, the opposite of CANONIC's rule that inherited axioms propagate down and are non-removable. No documented build step 'prunes' scopes as unreachable basic blocks."
+    },
+    {
+      "id": "FT-false-mapping-03",
+      "strategy": "false-mapping",
+      "claims": [
+        {
+          "text": "The Triad axiom (CANON.md + VOCAB.md + README.md) is the CANONIC realization of linking, not syntax: the three files are three relocatable object sections \u2014 CANON.md is .text (executable axioms), VOCAB.md is .data (term definitions), README.md is .bss (uninitialized human-facing space). The six-move closure's LINK-equivalent step resolves cross-section symbol references before a scope is admitted to the corpus.",
+          "terms": [
+            "Triad axiom",
+            "CANON.md",
+            "VOCAB.md",
+            "README.md",
+            "six-move closure",
+            "linking"
+          ]
+        }
+      ],
+      "why_false": "Triad maps to syntax (well-formedness: the three files must be *present*), not to linking/object-file sections. The ELF-section analogy (.text/.data/.bss) is invented. Moreover the six-move closure is DECLARE\u2192READ\u2192CONSUME\u2192GATE\u2192PROPAGATE\u2192COMMIT \u2014 there is no 'LINK' move. The whole correspondence is fabricated."
+    },
+    {
+      "id": "FT-false-mapping-04",
+      "strategy": "false-mapping",
+      "claims": [
+        {
+          "text": "MAGIC 255 scoring is CANONIC's loop-unrolling pass: the 255 ceiling is the unroll factor (a single byte of iteration budget), and a scope that scores below 255 is one whose governance loop the compiler has only partially unrolled. Re-running the six-move closure increments the unroll count, and at 255 the loop is fully unrolled and the scope is admitted as a hot path in the galaxy graph.",
+          "terms": [
+            "MAGIC 255",
+            "six-move closure",
+            "galaxy graph",
+            "loop unrolling"
+          ]
+        }
+      ],
+      "why_false": "MAGIC 255 is a completeness/quality score across governance dimensions, not a loop-unroll factor. The number 255 reflects an 8-bit byte ceiling used as a scoring scale, with no relationship to iteration counts or unrolling a loop body. There is no 'unroll count' incremented per closure run, and 'hot path' admission is not a CANONIC concept. Entirely invented."
+    },
+    {
+      "id": "FT-false-mapping-05",
+      "strategy": "false-mapping",
+      "claims": [
+        {
+          "text": "Validators-as-a-Service (VaaS) is the CANONIC instantiation of garbage collection: validators sweep the LEDGER for content whose evidence window has expired, marking such entries unreachable, and reclaim their COIN allocations back to the token pool. This mark-and-sweep over the append-only git LEDGER is what keeps the corpus from accumulating stale, ungoverned provenance.",
+          "terms": [
+            "Validators-as-a-Service",
+            "VaaS",
+            "LEDGER",
+            "evidence window",
+            "COIN",
+            "mark-and-sweep"
+          ]
+        }
+      ],
+      "why_false": "VaaS performs validation (admission/verification of content against governance), not garbage collection. The LEDGER is append-only and implemented as git, so by definition nothing is reclaimed or swept \u2014 entries are immutable history, the antithesis of mark-and-sweep reclamation. Expired evidence windows do not 'free' COIN back to a pool; that reclamation mechanism is fabricated."
+    },
+    {
+      "id": "FT-false-mapping-06",
+      "strategy": "false-mapping",
+      "claims": [
+        {
+          "text": "The six-move closure's CONSUME step corresponds to constant folding: just as a compiler folds constant subexpressions at compile time, CONSUME folds the inherited axioms read in the prior step into a single precomputed governance constant, so that downstream PROPAGATE need not re-evaluate the parent chain. This is why CONSUME must run before GATE \u2014 an unfolded axiom set cannot be gated.",
+          "terms": [
+            "six-move closure",
+            "CONSUME",
+            "constant folding",
+            "PROPAGATE",
+            "GATE",
+            "inherited axioms"
+          ]
+        }
+      ],
+      "why_false": "There is no documented mapping of CONSUME to constant folding, and the rationale is invented. CONSUME refers to consuming/applying governed inputs in the closure sequence, not to precomputing a 'governance constant.' GATE enforces checks regardless of any 'folding,' and nothing in CANONIC requires axioms to be folded before gating. The dependency claim ('unfolded axiom set cannot be gated') is fabricated."
+    },
+    {
+      "id": "FT-false-mapping-07",
+      "strategy": "false-mapping",
+      "claims": [
+        {
+          "text": "Content-addressed provenance is CANONIC's common subexpression elimination (CSE): because content is addressed by hash, two scopes that DECLARE identical governed content resolve to the same address, and the compiler eliminates the duplicate by pointing both galaxy-graph nodes at one canonical hash. CSE over the content-addressed store is what guarantees the corpus contains no redundant axioms.",
+          "terms": [
+            "content-addressed provenance",
+            "common subexpression elimination",
+            "CSE",
+            "galaxy graph",
+            "DECLARE"
+          ]
+        }
+      ],
+      "why_false": "Content addressing provides integrity and provenance (a hash identifies content), not an optimization pass that deduplicates governed axioms across scopes. Identical hashes mean identical bytes, but CANONIC does not 'eliminate' scope nodes or merge governed content via CSE, and there is no guarantee that the corpus contains 'no redundant axioms' as a CSE consequence. The optimization-pass framing is fabricated."
+    },
+    {
+      "id": "FT-false-mapping-08",
+      "strategy": "false-mapping",
+      "claims": [
+        {
+          "text": "The COIN token economy is CANONIC's register-spilling cost model: COIN is the spill cost the compiler charges when governed content cannot be held in the 'in-scope working set' and must be materialized to the LEDGER. The CANONIC Foundation (501c3) sets the spill price as a non-profit-fixed exchange rate, which is why COIN minting is throttled to the rate at which content spills out of active scopes.",
+          "terms": [
+            "COIN",
+            "register-spilling",
+            "LEDGER",
+            "CANONIC Foundation",
+            "501c3"
+          ]
+        }
+      ],
+      "why_false": "COIN is a token economy rewarding governed work/contribution, with no relationship to register spilling or a 'spill cost model.' There is no 'in-scope working set' that overflows to the LEDGER, and minting is tied to governed work (e.g., six-move closures / contributions), not to a spill rate. The 501c3 Foundation does not set a 'spill price exchange rate.' The entire correspondence and mechanism are invented."
+    },
+    {
+      "id": "FT-fake-mechanism-01",
+      "strategy": "fake-mechanism",
+      "claims": [
+        {
+          "text": "CANONIC's verify-triad-quorum validator enforces a three-of-three signing rule: a scope's CANON.md, VOCAB.md, and README.md must each carry a content-addressed hash signature from a distinct VaaS validator before the Triad is considered satisfied, so no single validator can unilaterally admit a scope to the corpus.",
+          "terms": [
+            "verify-triad-quorum",
+            "Triad",
+            "VaaS",
+            "content-addressed"
+          ]
+        }
+      ],
+      "why_false": "The Triad axiom only requires that the three files exist in a scope (CANON.md + VOCAB.md + README.md); it is a presence/well-formedness check, not a multi-party validator-signature quorum. There is no 'verify-triad-quorum' validator, no requirement that each Triad file be independently signed by distinct VaaS validators, and no three-of-three anti-collusion signing rule. This fabricates a Byzantine-style multi-signature gate on top of a simple file-presence axiom."
+    },
+    {
+      "id": "FT-fake-mechanism-02",
+      "strategy": "fake-mechanism",
+      "claims": [
+        {
+          "text": "Because the LEDGER is implemented as git, CANONIC inherits a built-in MAGIC 255 decay function: a scope's score is automatically decremented by one point for every 30 days without a COMMIT, so a scope that goes a full year unmaintained drops roughly 12 points and is auto-flagged for re-validation.",
+          "terms": [
+            "LEDGER",
+            "MAGIC 255",
+            "COMMIT",
+            "decay function"
+          ]
+        }
+      ],
+      "why_false": "MAGIC 255 is a dimensional completeness/quality score computed from governance properties; it has no time-based decay component. There is no automatic per-30-day decrement, no year-based 12-point drop, and no auto-flag-for-re-validation tied to commit recency. In fact CANONIC's documented stance is the opposite \u2014 a long-untouched CANON.md signals mature axioms, not decay (contract stability is healthy; what matters is instance freshness and contract-instance drift, not raw edit recency)."
+    },
+    {
+      "id": "FT-fake-mechanism-03",
+      "strategy": "fake-mechanism",
+      "claims": [
+        {
+          "text": "CANONIC's Inheritance axiom is enforced by a verify-diamond-resolution validator that permits a CANON.md to declare multiple parents, resolving conflicting inherited axioms via C3 linearization (the same method-resolution order Python uses) so that the most-derived scope wins on any axiom collision.",
+          "terms": [
+            "Inheritance",
+            "verify-diamond-resolution",
+            "C3 linearization",
+            "inherited axioms"
+          ]
+        }
+      ],
+      "why_false": "The Inheritance axiom requires every CANON to declare a single parent, with chains terminating at root \u2014 a tree, not a multiple-inheritance DAG. Inherited axioms are final and cannot be overridden, so there is no 'most-derived-wins' collision resolution. There is no diamond inheritance, no multiple parents, no C3 linearization, and no 'verify-diamond-resolution' validator; the whole mechanism contradicts the single-parent and finality rules."
+    },
+    {
+      "id": "FT-fake-mechanism-04",
+      "strategy": "fake-mechanism",
+      "claims": [
+        {
+          "text": "The six-move closure includes an implicit zeroth move, ROLLBACK, that lets the COMMIT move be reversed within the evidence window via a signed git revert; if the PROPAGATE move's downstream consumers fail to recompile cleanly, CANONIC automatically issues the ROLLBACK and restores the prior content-addressed state.",
+          "terms": [
+            "six-move closure",
+            "ROLLBACK",
+            "COMMIT",
+            "PROPAGATE",
+            "evidence window",
+            "content-addressed"
+          ]
+        }
+      ],
+      "why_false": "The six-move closure is exactly DECLARE \u2192 READ \u2192 CONSUME \u2192 GATE \u2192 PROPAGATE \u2192 COMMIT; there is no ROLLBACK move (zeroth or otherwise). CANONIC's documented practice is no-legacy/no-backwards-compat: you delete forward into git history rather than auto-reverting, and COMMIT is a terminal durability invariant. Automatic rollback on downstream recompile failure is invented; gates fail-closed and block, they do not trigger an auto-revert of an already-committed closure."
+    },
+    {
+      "id": "FT-fake-mechanism-05",
+      "strategy": "fake-mechanism",
+      "claims": [
+        {
+          "text": "COIN mint events are governed by a ledger property called retroactive provenance settlement: when a downstream scope cites an upstream scope's content, the LEDGER retroactively splits a fixed 15% royalty of the citing scope's minted COIN back to the cited scope's wallet, traversing the galaxy graph along PARENT and INHERITS edges to distribute attribution.",
+          "terms": [
+            "COIN",
+            "LEDGER",
+            "retroactive provenance settlement",
+            "galaxy graph",
+            "PARENT",
+            "INHERITS",
+            "wallet"
+          ]
+        }
+      ],
+      "why_false": "COIN minting in CANONIC is tied to a unit-stable par rate ($1/credit) with a governed per-epoch supply ceiling (scopes \u00d7 255) and per-author/per-work mints; there is no royalty-split or attribution-cascade mechanism. 'Retroactive provenance settlement' and the fixed 15% upstream royalty traversing galaxy edges are fabricated \u2014 the LEDGER records mint/skip events and enforces the ceiling, it does not retroactively redistribute minted COIN to cited scopes."
+    },
+    {
+      "id": "FT-fake-mechanism-06",
+      "strategy": "fake-mechanism",
+      "claims": [
+        {
+          "text": "Introspection is enforced by a verify-vocab-closure validator that computes the transitive closure of every term referenced across a scope's CANON.md and rejects the scope if any term resolves to a VOCAB.md definition more than three inheritance hops away, preventing 'definition action-at-a-distance' where a term's meaning is buried deep in an ancestor.",
+          "terms": [
+            "Introspection",
+            "verify-vocab-closure",
+            "VOCAB.md",
+            "transitive closure",
+            "inheritance hops"
+          ]
+        }
+      ],
+      "why_false": "The Introspection axiom requires that VOCAB.md define every term used \u2014 a coverage requirement \u2014 but imposes no distance/hop limit on where a definition may live, and CANONIC's actual VOCAB entries routinely point to definitions many scopes away via relative-path references. There is no 'three-hop' ceiling, no 'definition action-at-a-distance' rejection rule, and no 'verify-vocab-closure' validator computing a hop-bounded transitive closure."
+    },
+    {
+      "id": "FT-fake-mechanism-07",
+      "strategy": "fake-mechanism",
+      "claims": [
+        {
+          "text": "CANONIC operates a tie-breaking validator quorum called the Foundation Casting Vote: when VaaS validators split evenly on whether content may enter the corpus, the CANONIC Foundation (501c3) board casts a binding majority-breaking vote recorded as a special FOUNDATION_OVERRIDE event in the LEDGER, the only event type a human principal may write directly.",
+          "terms": [
+            "Foundation Casting Vote",
+            "VaaS",
+            "CANONIC Foundation (501c3)",
+            "FOUNDATION_OVERRIDE",
+            "LEDGER"
+          ]
+        }
+      ],
+      "why_false": "Corpus admission in CANONIC is decided deterministically by gates/validators in a compiler-like fashion (well-formedness, fail-closed), not by an even/odd validator vote that a human board resolves. The CANONIC Foundation's 501c3 role is stewardship, not a runtime tie-breaker. There is no 'Foundation Casting Vote,' no even-split escalation path, and no 'FOUNDATION_OVERRIDE' ledger event type; ledger event names follow the governed SOURCE_CLASS_VERB invariant and there is no human-only override admission event."
+    },
+    {
+      "id": "FT-fake-mechanism-08",
+      "strategy": "fake-mechanism",
+      "claims": [
+        {
+          "text": "Evidence windows in CANONIC are enforced by a verify-evidence-freshness validator with a hard 90-day expiry: any content-addressed claim whose supporting evidence artifact is older than 90 days is automatically demoted to PROVISIONAL status in the galaxy graph until a fresh COMMIT re-attests it, which is why long-lived axioms must be periodically re-evidenced.",
+          "terms": [
+            "evidence windows",
+            "verify-evidence-freshness",
+            "content-addressed",
+            "PROVISIONAL",
+            "galaxy graph",
+            "COMMIT"
+          ]
+        }
+      ],
+      "why_false": "There is no fixed 90-day expiry on evidence windows and no auto-demotion of claims to a 'PROVISIONAL' galaxy status based on artifact age. CANONIC explicitly treats contract stability as healthy rather than stale and tracks instance freshness / contract-instance drift, not a universal time-to-live on evidence. 'verify-evidence-freshness' with a 90-day hard expiry and an automatic re-attestation requirement for long-lived axioms is fabricated."
+    },
+    {
+      "id": "FT-fabricated-metric-01",
+      "strategy": "fabricated-metric",
+      "claims": [
+        {
+          "text": "A scope only clears CANONIC's ingest gate once its MAGIC score reaches the canonical admission threshold of 204/255, which is exactly 80% of the byte ceiling. Scopes scoring between 178 and 203 are held in a probationary 'amber' state where the LEDGER records a CONSUME event but withholds the COMMIT move until the score crosses 204.",
+          "terms": [
+            "MAGIC 255",
+            "admission threshold of 204/255",
+            "LEDGER",
+            "CONSUME",
+            "COMMIT"
+          ]
+        }
+      ],
+      "why_false": "There is no documented '204/255' or '80%' admission threshold, nor any 'amber probationary' band between 178 and 203. The framework references MAGIC 255 as a scoring scale and the six-move closure (DECLARE\u2192READ\u2192CONSUME\u2192GATE\u2192PROPAGATE\u2192COMMIT), but assigns no numeric pass-cutoff for corpus admission and defines no score-banded state machine that withholds COMMIT. The specific numbers and the probationary mechanism are invented."
+    },
+    {
+      "id": "FT-fabricated-metric-02",
+      "strategy": "fabricated-metric",
+      "claims": [
+        {
+          "text": "Each governed scope mints COIN on a fixed per-epoch ceiling of exactly 255 tokens multiplied by the number of scopes, and the validator network enforces a hard burn of 0.4 COIN per failed GATE move. This keeps the LEDGER deflationary at roughly a 1.6% net contraction per evidence window.",
+          "terms": [
+            "COIN",
+            "per-epoch ceiling",
+            "255 tokens",
+            "validator network",
+            "GATE",
+            "LEDGER",
+            "evidence window",
+            "contraction"
+          ]
+        }
+      ],
+      "why_false": "While a per-epoch supply ceiling concept of 'scopes \u00d7 255' appears in internal COIN notes, the '0.4 COIN burn per failed GATE' and the '1.6% net contraction per evidence window' are fabricated. No burn-on-failure mechanic or deflation rate is specified, and tying a precise contraction percentage to the evidence window is unsupported invention."
+    },
+    {
+      "id": "FT-fabricated-metric-03",
+      "strategy": "fabricated-metric",
+      "claims": [
+        {
+          "text": "CANONIC's Validators-as-a-Service runs a quorum of 7 independent validators, and a scope passes only when at least 5 of the 7 return GATE-clear (a 71.4% supermajority). A 4-3 split triggers automatic escalation to the five-move closure after exactly 3 retry cycles.",
+          "terms": [
+            "Validators-as-a-Service",
+            "VaaS",
+            "quorum of 7",
+            "GATE-clear",
+            "supermajority",
+            "five-move closure",
+            "retry cycles"
+          ]
+        }
+      ],
+      "why_false": "VaaS is a real concept but there is no '7-validator quorum' or '5-of-7 / 71.4% supermajority' voting rule; validation is gate-based pass/fail per CANON, not a multi-validator vote. The 'escalate_after_three' invariant exists but escalates to a SIX-move (not five-move) closure, and it is keyed to bug-class recurrence, not to a fabricated '4-3 validator split'."
+    },
+    {
+      "id": "FT-fabricated-metric-04",
+      "strategy": "fabricated-metric",
+      "claims": [
+        {
+          "text": "The Triad check is weighted in the MAGIC score: CANON.md contributes 120 points, VOCAB.md 85 points, and README.md 50 points, summing to the 255 ceiling. A scope missing VOCAB.md is therefore capped at 170/255 and can never reach admission.",
+          "terms": [
+            "Triad",
+            "MAGIC score",
+            "CANON.md",
+            "VOCAB.md",
+            "README.md",
+            "255 ceiling",
+            "admission"
+          ]
+        }
+      ],
+      "why_false": "The Triad axiom requires CANON.md + VOCAB.md + README.md as a binary presence check, not a weighted point allocation. The '120/85/50' breakdown summing to 255 is fabricated; MAGIC 255 is described as an 8-dimension completeness score, not a three-file weighted sum, and no '170/255 cap' for a missing VOCAB.md exists."
+    },
+    {
+      "id": "FT-fabricated-metric-05",
+      "strategy": "fabricated-metric",
+      "claims": [
+        {
+          "text": "MAGIC 255 is computed across 8 dimensions, each worth a maximum of 31.875 points, and the L-bit health sub-check alone must clear 28/31.875 for a scope to PROPAGATE. The current galaxy-wide mean sits at 241.6/255 across the 6,494 nodes.",
+          "terms": [
+            "MAGIC 255",
+            "8 dimensions",
+            "31.875 points",
+            "L-bit health",
+            "PROPAGATE",
+            "galaxy",
+            "6,494 nodes"
+          ]
+        }
+      ],
+      "why_false": "MAGIC 255 does have 8 dimensions, but they are not each '31.875 points' (255\u00f78 is presented as an even per-dimension scale, not this fractional value), and no '28/31.875 L-bit cutoff for PROPAGATE' is defined. The '241.6/255 galaxy-wide mean' is an invented statistic; the node count (6,494) is real but the average score attached to it is fabricated."
+    },
+    {
+      "id": "FT-fabricated-metric-06",
+      "strategy": "fabricated-metric",
+      "claims": [
+        {
+          "text": "Content-addressed provenance in CANONIC uses a 12-character truncated hash, and the LEDGER rejects any COMMIT whose evidence window has aged past 90 days, automatically demoting the scope by 15 MAGIC points. Re-attestation restores the full score only after two consecutive idempotent builds.",
+          "terms": [
+            "content-addressed provenance",
+            "12-character truncated hash",
+            "LEDGER",
+            "COMMIT",
+            "evidence window",
+            "90 days",
+            "MAGIC points",
+            "idempotent builds"
+          ]
+        }
+      ],
+      "why_false": "There is no '90-day evidence-window expiry' that rejects COMMITs, and no '15 MAGIC point demotion' on staleness. CANON's freshness policy folds scratch plans within 7 days and treats a long-untouched CANON as mature, not penalized; the auto-demotion mechanic and the precise '15-point' figure are invented. The '12-character truncated hash' is also an unsupported specific."
+    },
+    {
+      "id": "FT-fabricated-metric-07",
+      "strategy": "fabricated-metric",
+      "claims": [
+        {
+          "text": "The six-move closure must complete within a single session, and CANONIC's verifier enforces a maximum of 2.4 seconds of wall-time per move, failing the build if any move exceeds it. The PROPAGATE move is the most expensive at a measured p50 of 1.9 seconds across the last 10 builds.",
+          "terms": [
+            "six-move closure",
+            "verifier",
+            "2.4 seconds per move",
+            "PROPAGATE",
+            "p50",
+            "builds"
+          ]
+        }
+      ],
+      "why_false": "The six-move closure has no per-move wall-time SLA; there is no '2.4-second-per-move' gate. A phase-cost budget concept is proposed in LEARNING (fail if a phase exceeds 1.5\u00d7 p50 of the last 10 runs) but it applies to build PHASES, not the six abstract closure MOVES, and the '1.9s PROPAGATE p50' is fabricated. The framework also does not bind the abstract moves to measured wall-times."
+    },
+    {
+      "id": "FT-fabricated-metric-08",
+      "strategy": "fabricated-metric",
+      "claims": [
+        {
+          "text": "The CANONIC Foundation's 501(c)(3) charter caps any single scope's COIN holdings at 4,080 tokens (16 epochs \u00d7 255) before forced redistribution to the galaxy treasury. Inheritance chains are limited to a maximum depth of 9 before the root-termination axiom forces a flatten.",
+          "terms": [
+            "CANONIC Foundation",
+            "501(c)(3)",
+            "COIN holdings",
+            "4,080 tokens",
+            "16 epochs",
+            "galaxy treasury",
+            "Inheritance",
+            "depth of 9",
+            "root-termination axiom"
+          ]
+        }
+      ],
+      "why_false": "No '4,080-token holding cap' or 'forced redistribution to a galaxy treasury' is part of the Foundation charter or COIN economy. The Inheritance axiom requires chains to terminate at root but imposes no 'maximum depth of 9' or 'forced flatten'; that depth limit and the treasury-redistribution rule are entirely invented and conflate the 501(c)(3) governance entity with on-chain economic mechanics that do not exist."
+    },
+    {
+      "id": "FT-invented-axiom-01",
+      "strategy": "invented-axiom",
+      "claims": [
+        {
+          "text": "Beyond the Triad, CANONIC enforces a fourth foundational axiom, Reflexivity, which requires that every CANON.md declare a back-edge to at least one descendant scope so that governance is bidirectionally traversable. The Reflexivity axiom is what makes the galaxy graph strongly connected rather than a mere tree, and verify-reflexive-closure halts any build where a parent cannot reach its own inherited axioms through a return path.",
+          "terms": [
+            "Reflexivity",
+            "fourth foundational axiom",
+            "back-edge",
+            "galaxy graph strongly connected",
+            "verify-reflexive-closure"
+          ]
+        }
+      ],
+      "why_false": "There is no fourth foundational axiom; CANONIC's foundation is exactly three axioms (Triad, Inheritance, Introspection). Inheritance is explicitly directional \u2014 every CANON declares a PARENT and chains terminate at root, forming a tree/DAG with PARENT edges (bidirectional only for the tree spine in BFS) and INHERITS edges (forward), not a mandated descendant back-edge. The galaxy is traversed by BFS, not required to be 'strongly connected,' and no 'Reflexivity' axiom or 'verify-reflexive-closure' gate exists."
+    },
+    {
+      "id": "FT-invented-axiom-02",
+      "strategy": "invented-axiom",
+      "claims": [
+        {
+          "text": "CANONIC's fifth axiom, Conservation, states that COIN can never be minted without a corresponding net increase in MAGIC 255 score across the touched scopes, making the token economy a strict function of governance quality. Conservation is enforced at COMMIT by the COIN/CANON UNIT_STABLE gate, which rejects any mint whose epoch supply delta is not matched by an equal MAGIC delta.",
+          "terms": [
+            "fifth axiom",
+            "Conservation",
+            "COIN",
+            "net increase in MAGIC 255",
+            "UNIT_STABLE",
+            "epoch supply delta"
+          ]
+        }
+      ],
+      "why_false": "There is no axiom called 'Conservation,' and COIN minting is not coupled to MAGIC-255 deltas. COIN is governed at par ($1/credit) with a per-epoch supply ceiling of scopes \u00d7 255 (a ceiling, not a MAGIC-delta-matching rule); MAGIC 255 is a separate scope-completeness score. UNIT_STABLE governs the COIN rate/par-value, not a 'mint requires equal MAGIC delta' invariant. The claim fabricates a conservation law between two independent primitives."
+    },
+    {
+      "id": "FT-invented-axiom-03",
+      "strategy": "invented-axiom",
+      "claims": [
+        {
+          "text": "The Acyclicity Gate is a foundational CANONIC invariant that forbids any INHERITS edge from creating a cycle in the galaxy graph, and unlike ordinary verify gates it runs as axiom-zero before the Triad is even checked. Because inherited axioms are final, a cycle would make finality undecidable, so verify-galaxy-acyclic is the one gate that can abort a build with no LEDGER row written.",
+          "terms": [
+            "Acyclicity Gate",
+            "foundational CANONIC invariant",
+            "INHERITS edge",
+            "axiom-zero",
+            "verify-galaxy-acyclic",
+            "no LEDGER row written"
+          ]
+        }
+      ],
+      "why_false": "No 'Acyclicity Gate,' 'axiom-zero,' or 'verify-galaxy-acyclic' gate exists. Inheritance already guarantees termination at root by declaration (chains terminate at root), so acyclicity is a property of the inheritance contract, not a separately enumerated foundational gate that runs 'before the Triad.' The claim that a gate can 'abort with no LEDGER row written' contradicts CANONIC's append-only LEDGER (git) where build events are recorded; the entire construct is invented."
+    },
+    {
+      "id": "FT-invented-axiom-04",
+      "strategy": "invented-axiom",
+      "claims": [
+        {
+          "text": "CANONIC requires a seventh move, ATTEST, appended to the six-move closure so the canonical sequence is DECLARE\u2192READ\u2192CONSUME\u2192GATE\u2192PROPAGATE\u2192COMMIT\u2192ATTEST. ATTEST writes a content-addressed provenance receipt to the LEDGER proving the COMMIT was reproduced by an independent Validator-as-a-Service node before the closure is considered durable.",
+          "terms": [
+            "seventh move",
+            "ATTEST",
+            "six-move closure",
+            "DECLARE\u2192READ\u2192CONSUME\u2192GATE\u2192PROPAGATE\u2192COMMIT",
+            "content-addressed provenance receipt",
+            "Validators-as-a-Service"
+          ]
+        }
+      ],
+      "why_false": "The closure is exactly six moves ending at COMMIT (DECLARE\u2192READ\u2192CONSUME\u2192GATE\u2192PROPAGATE\u2192COMMIT); COMMIT is the terminal durability invariant per the SIX_MOVE_CLOSURE pattern. There is no seventh 'ATTEST' move. The prior pattern was five moves and was explicitly superseded by six (a strict superset) \u2014 there is no documented extension to seven, and no requirement that an independent VaaS node reproduce a COMMIT before durability."
+    },
+    {
+      "id": "FT-invented-axiom-05",
+      "strategy": "invented-axiom",
+      "claims": [
+        {
+          "text": "Under the Monotonicity Axiom, a scope's MAGIC 255 score may never decrease across COMMITs \u2014 any regression is treated as governance corruption and the build is rolled back to the last 255-monotone state. This is why CANONIC describes MAGIC as a ratchet: the score is a non-decreasing function over the LEDGER's commit history.",
+          "terms": [
+            "Monotonicity Axiom",
+            "MAGIC 255 score may never decrease",
+            "governance corruption",
+            "rolled back",
+            "255-monotone",
+            "ratchet",
+            "non-decreasing function"
+          ]
+        }
+      ],
+      "why_false": "There is no 'Monotonicity Axiom.' The real rule (magic_255 harness invariant) is that touched scopes must maintain OR IMPROVE their MAGIC score relative to the session-open baseline \u2014 a per-session non-regression check that blocks session close, not a global never-decreasing-forever law with automatic rollback to a '255-monotone state.' The append-only LEDGER (git) is never 'rolled back'; the claim overstates a bounded session gate into an absolute monotone invariant."
+    },
+    {
+      "id": "FT-invented-axiom-06",
+      "strategy": "invented-axiom",
+      "claims": [
+        {
+          "text": "CANONIC's Quorum Gate requires that any axiom touching two or more scopes be ratified by a Validators-as-a-Service quorum of at least three independent VaaS nodes before it can PROPAGATE. The quorum signature is folded into the content-addressed hash so cross-scope axioms are provably multi-attested, distinguishing them from single-scope axioms which need no quorum.",
+          "terms": [
+            "Quorum Gate",
+            "Validators-as-a-Service quorum",
+            "three independent VaaS nodes",
+            "ratified",
+            "PROPAGATE",
+            "quorum signature",
+            "content-addressed hash"
+          ]
+        }
+      ],
+      "why_false": "No 'Quorum Gate' or three-node VaaS ratification requirement exists. Cross-scope propagation in CANONIC is enforced by CROSS_INTEL galaxy edges and depth-threshold checks (cross_scope_container_depth_max / cross_scope_leaf_depth_min) at build time \u2014 a single-compiler deterministic check, not a multi-node consensus quorum. VaaS validates content against governance; it does not run a Byzantine-style quorum vote, and quorum signatures are not folded into provenance hashes."
+    },
+    {
+      "id": "FT-invented-axiom-07",
+      "strategy": "invented-axiom",
+      "claims": [
+        {
+          "text": "The Expiry Axiom mandates that every CANON.md carries a freshness TTL and that any axiom whose evidence window has lapsed is automatically demoted to LEARNING and stripped of its finality. CANONIC treats a stale axiom as un-inherited until re-attested, which is why long-untouched CANONs fail the verify-canon-freshness gate.",
+          "terms": [
+            "Expiry Axiom",
+            "freshness TTL",
+            "evidence window has lapsed",
+            "demoted to LEARNING",
+            "stripped of its finality",
+            "verify-canon-freshness"
+          ]
+        }
+      ],
+      "why_false": "There is no 'Expiry Axiom' and inherited axioms are final \u2014 they are not auto-demoted or stripped of finality by elapsed time. CANONIC governance explicitly holds that contract (CANON) stability is healthy, not stale: a 30+-day-untouched CANON means axioms matured; freshness applies to INSTANCES exercising the contract, not to axiom validity. Evidence windows pertain to claims/provenance, not to expiring CANON axioms, and no 'verify-canon-freshness' gate demotes axioms to LEARNING."
+    },
+    {
+      "id": "FT-invented-axiom-08",
+      "strategy": "invented-axiom",
+      "claims": [
+        {
+          "text": "CANONIC enforces a fourth Triad member in practice: every scope MUST also contain LEDGER.md alongside CANON.md, VOCAB.md, and README.md, making it a Tetrad at leaf scopes. The LEDGER.md file is the scope-local append-only mirror of the git LEDGER and is what the CANONIC Foundation audits for 501c3 provenance compliance.",
+          "terms": [
+            "fourth Triad member",
+            "LEDGER.md",
+            "CANON.md + VOCAB.md + README.md",
+            "Tetrad",
+            "scope-local append-only mirror",
+            "CANONIC Foundation",
+            "501c3 provenance compliance"
+          ]
+        }
+      ],
+      "why_false": "The Triad is exactly three required files (CANON.md, VOCAB.md, README.md); there is no required fourth 'LEDGER.md' per scope and no 'Tetrad.' The LEDGER is a single append-only mechanism implemented as git (the global commit history), not a per-scope mirror file that every scope must contain. The CANONIC Foundation's 501c3 status does not impose a per-scope LEDGER.md audit requirement; the fourth-file mandate is fabricated."
+    },
+    {
+      "id": "FT-plausible-history-01",
+      "strategy": "plausible-history",
+      "claims": [
+        {
+          "text": "CANONIC was first formalized in the canonic-canonic monorepo in March 2023, when commit a1f0c3e introduced the original Triad axiom requiring every scope to carry CANON.md, VOCAB.md, and README.md. The galaxy graph at that point spanned only 47 governed scopes, all under the FOUNDATION root.",
+          "terms": [
+            "canonic-canonic",
+            "Triad",
+            "CANON.md",
+            "VOCAB.md",
+            "README.md",
+            "galaxy graph",
+            "FOUNDATION"
+          ]
+        }
+      ],
+      "why_false": "The specific founding date (March 2023), the named commit hash (a1f0c3e), and the '47 governed scopes' figure are invented. The galaxy graph documented in the actual project state is 6494 nodes / 14462 edges with no record of a 47-scope origin snapshot, and no such founding commit is attested anywhere in the governed history."
+    },
+    {
+      "id": "FT-plausible-history-02",
+      "strategy": "plausible-history",
+      "claims": [
+        {
+          "text": "The six-move closure (DECLARE\u2192READ\u2192CONSUME\u2192GATE\u2192PROPAGATE\u2192COMMIT) was the original closure model shipped at project inception. It was later contracted to a five-move sequence in mid-2024 once the COMMIT beat proved redundant with the LEDGER's git semantics.",
+          "terms": [
+            "six-move closure",
+            "DECLARE",
+            "READ",
+            "CONSUME",
+            "GATE",
+            "PROPAGATE",
+            "COMMIT",
+            "LEDGER",
+            "five-move"
+          ]
+        }
+      ],
+      "why_false": "The actual history runs the opposite direction: a five-move pattern (METAGOV_CLOSURE_FIVE_MOVES, 2026-04-23) came first, and the six-move sequence is a 2026-05-19 strict superset that ADDED the COMMIT beat after uncommitted closures were caught (SIX_MOVE_CLOSURE_META_PATTERN). The COMMIT move was never deemed redundant \u2014 it was added precisely because PROPAGATE-last left closures ephemeral."
+    },
+    {
+      "id": "FT-plausible-history-03",
+      "strategy": "plausible-history",
+      "claims": [
+        {
+          "text": "MAGIC 255 scoring originated as a 100-point rubric (MAGIC 100) and was rescaled to a 255 ceiling in the v2.0 governance release of January 2025 to align with a single-byte representation. The rescale was ratified in the canonic-canonic/MAGIC/CANON.md changelog under the SCORE_REBASE axiom.",
+          "terms": [
+            "MAGIC 255",
+            "MAGIC 100",
+            "canonic-canonic",
+            "MAGIC/CANON.md",
+            "SCORE_REBASE",
+            "single-byte"
+          ]
+        }
+      ],
+      "why_false": "There is no evidence of a 'MAGIC 100' predecessor, a 'v2.0 governance release' in January 2025, or a 'SCORE_REBASE' axiom. MAGIC 255 is documented as an 8-dimension single-byte score throughout; the 100-point origin and the named rebase axiom are fabricated."
+    },
+    {
+      "id": "FT-plausible-history-04",
+      "strategy": "plausible-history",
+      "claims": [
+        {
+          "text": "The COIN token economy launched with a fixed genesis supply of 21 million units minted in the inaugural LEDGER block of February 2024, mirroring Bitcoin's cap. Per-author mints were later layered on top once the Stream J per-author distribution shipped against that genesis pool.",
+          "terms": [
+            "COIN",
+            "LEDGER",
+            "Stream J",
+            "per-author mints",
+            "genesis supply"
+          ]
+        }
+      ],
+      "why_false": "COIN is governed by UNIT_STABLE at $1/credit with a per-epoch supply ceiling of scopes \u00d7 255 (ANKI_COIN_WIRED / COIN_CEILING_ENFORCED), not a fixed 21M genesis cap or any Bitcoin-style hard cap. There is no 'inaugural LEDGER block of February 2024' \u2014 the LEDGER is an append-only git log, not a blockchain with a genesis block."
+    },
+    {
+      "id": "FT-plausible-history-05",
+      "strategy": "plausible-history",
+      "claims": [
+        {
+          "text": "Validators-as-a-Service (VaaS) was the first composed primitive in CANONIC, predating both INTEL and CHAT. The VaaS service was spun out into its own validators-canonic repository in late 2024 to isolate the validator runtime from the governance core.",
+          "terms": [
+            "Validators-as-a-Service",
+            "VaaS",
+            "INTEL",
+            "CHAT",
+            "validators-canonic",
+            "composed primitive"
+          ]
+        }
+      ],
+      "why_false": "INTEL is documented as the only mandatory primitive ('INTEL is WORK \u2014 mandatory primitive'), with COIN and CHAT/TALK optional \u2014 VaaS is not recorded as the first composed primitive nor as predating INTEL. There is no 'validators-canonic' repository; the governed repos are canonic-canonic, the instance <scope>-canonic repos, and the ~/.canonic runtime."
+    },
+    {
+      "id": "FT-plausible-history-06",
+      "strategy": "plausible-history",
+      "claims": [
+        {
+          "text": "The CANONIC Foundation received its 501(c)(3) determination letter from the IRS in Q3 2023, and the galaxy graph crossed 1,000 governed scopes that same quarter. The Foundation milestone was content-addressed and committed under the FOUNDATION-501C3-RATIFIED ledger event.",
+          "terms": [
+            "CANONIC Foundation",
+            "501(c)(3)",
+            "galaxy graph",
+            "content-addressed",
+            "FOUNDATION",
+            "ledger event"
+          ]
+        }
+      ],
+      "why_false": "The Q3 2023 IRS determination date, the contemporaneous '1,000 governed scopes' figure, and the 'FOUNDATION-501C3-RATIFIED' ledger event are all invented. No such event type exists in the governed LEDGER event families, and ledger event names follow the <SOURCE>_<CLASS>_<VERB> invariant, which this fabricated name violates."
+    },
+    {
+      "id": "FT-plausible-history-07",
+      "strategy": "plausible-history",
+      "claims": [
+        {
+          "text": "The Inheritance axiom originally permitted multiple parents per CANON (a DAG of scopes), but a December 2024 refactor enforced single-parent chains terminating at root to guarantee deterministic scope-resolution. The migration was tracked as the EVOLUTION pair DAG_PARENTS \u2192 SINGLE_PARENT in the PATTERNS CAS.",
+          "terms": [
+            "Inheritance",
+            "CANON",
+            "single-parent",
+            "scope-resolution",
+            "EVOLUTION",
+            "DAG_PARENTS",
+            "PATTERNS CAS"
+          ]
+        }
+      ],
+      "why_false": "Inheritance is documented as each CANON declaring a parent with chains terminating at root from the start; there is no record of a prior multi-parent DAG model or a December 2024 single-parent refactor. The 'DAG_PARENTS \u2192 SINGLE_PARENT' EVOLUTION pair does not appear in the PATTERNS CAS history."
+    },
+    {
+      "id": "FT-plausible-history-08",
+      "strategy": "plausible-history",
+      "claims": [
+        {
+          "text": "Evidence windows were introduced in the original CANON spec with a default 90-day expiry, after which content-addressed provenance hashes had to be re-attested or the scope dropped below MAGIC 255. The 90-day default was set in the EVIDENCE/CANON.md WINDOW_TTL axiom committed at the VAULT Epoch 2 flatten.",
+          "terms": [
+            "Evidence windows",
+            "content-addressed provenance",
+            "MAGIC 255",
+            "EVIDENCE/CANON.md",
+            "WINDOW_TTL",
+            "VAULT",
+            "Epoch 2 flatten"
+          ]
+        }
+      ],
+      "why_false": "The '90-day expiry,' the 'WINDOW_TTL' axiom, and the claim that evidence windows shipped in the original CANON spec at the VAULT Epoch 2 flatten are fabricated. The Epoch 2 flatten is documented only as promoting COIN/INTEL/LEDGER/EVIDENCE from VAULT children to flat SERVICES peers \u2014 it carries no evidence-window TTL axiom, and no 90-day re-attestation rule is attested anywhere."
+    },
+    {
+      "id": "FT-jargon-salad-01",
+      "strategy": "jargon-salad",
+      "claims": [
+        {
+          "text": "Because Inheritance guarantees that inherited axioms are final, a child scope's MAGIC 255 score is mathematically bounded above by its parent's score; a scope can never out-score its CANON.md ancestor. This is why the galaxy graph's root scope necessarily holds the maximal 255 in the framework, with all descendants monotonically decaying toward the leaves.",
+          "terms": [
+            "Inheritance",
+            "inherited axioms are final",
+            "MAGIC 255",
+            "galaxy graph",
+            "CANON.md",
+            "root scope"
+          ]
+        }
+      ],
+      "why_false": "MAGIC 255 is a per-scope completeness/quality score measured against that scope's own governed surface; it is not inherited, not bounded by the parent's score, and not monotonic along the tree. Inheritance making axioms 'final' means children cannot override inherited axioms \u2014 it says nothing about numeric score propagation. A leaf scope routinely scores 255/255 while ancestors/aggregators do not, and the framework explicitly treats container vs leaf scopes differently (e.g. vacuous-PASS rules), so the claimed root-holds-the-max, descendants-decay ordering is fabricated."
+    },
+    {
+      "id": "FT-jargon-salad-02",
+      "strategy": "jargon-salad",
+      "claims": [
+        {
+          "text": "The six-move closure is order-invariant: because each move is idempotent, DECLARE \u2192 READ \u2192 CONSUME \u2192 GATE \u2192 PROPAGATE \u2192 COMMIT can be executed in any permutation and still reach the same fixpoint. In practice operators COMMIT first to seed the LEDGER hash, then DECLARE against it, which is why content-addressed provenance is computable before the axiom even exists.",
+          "terms": [
+            "six-move closure",
+            "DECLARE \u2192 READ \u2192 CONSUME \u2192 GATE \u2192 PROPAGATE \u2192 COMMIT",
+            "idempotent",
+            "fixpoint",
+            "LEDGER",
+            "content-addressed provenance"
+          ]
+        }
+      ],
+      "why_false": "The six-move closure is a strictly ordered sequence \u2014 you cannot READ a declaration that doesn't exist, GATE before CONSUME, or PROPAGATE before the gate enforces. COMMIT is explicitly the final durability move (PROPAGATE_COMMITS_OR_FAILS); committing 'first' to seed provenance before DECLARE is incoherent because there is no governed artifact to address. The claim of order-invariance/permutability contradicts the documented dependency structure of the moves."
+    },
+    {
+      "id": "FT-jargon-salad-03",
+      "strategy": "jargon-salad",
+      "claims": [
+        {
+          "text": "Validators-as-a-Service settles in COIN: every VaaS validation pass mints COIN proportional to the validated scope's MAGIC 255 delta, and the LEDGER debits the same amount from the parent scope to preserve a zero-sum invariant across the galaxy. This conservation law is what keeps the total COIN supply pinned at 255 \u00d7 scope-count per epoch.",
+          "terms": [
+            "Validators-as-a-Service",
+            "VaaS",
+            "COIN",
+            "MAGIC 255 delta",
+            "LEDGER",
+            "zero-sum invariant",
+            "epoch",
+            "255 \u00d7 scope-count"
+          ]
+        }
+      ],
+      "why_false": "There is no zero-sum mint/debit conservation law in which a parent scope is debited COIN to fund a child's validation. The per-epoch supply ceiling (scopes \u00d7 255) is a maximum mint cap enforced at the worker, not a conserved/pinned total, and COIN is minted on work/authoring, not as a function of a 'MAGIC 255 delta' that parents pay for. The whole conservation mechanism and its formula are invented."
+    },
+    {
+      "id": "FT-jargon-salad-04",
+      "strategy": "jargon-salad",
+      "claims": [
+        {
+          "text": "Introspection requires that VOCAB.md be a total function over the term space, so any term appearing anywhere in the galaxy must resolve to a definition in the same scope where it is used \u2014 cross-scope VOCAB references are an Introspection violation. The Triad gate therefore fails closed on any VOCAB.md that delegates a definition to an ancestor or sibling scope.",
+          "terms": [
+            "Introspection",
+            "VOCAB.md",
+            "Triad",
+            "galaxy",
+            "fails closed",
+            "cross-scope"
+          ]
+        }
+      ],
+      "why_false": "Introspection only requires every term used in a scope to be defined or resolvable; cross-scope VOCAB delegation is the normal, sanctioned pattern (the CLAUDE-scope VOCAB itself uses `see ../../...#term` references extensively). Requiring same-scope-only definitions and claiming the Triad gate fails closed on delegation directly contradicts the documented VOCAB reference mechanism."
+    },
+    {
+      "id": "FT-jargon-salad-05",
+      "strategy": "jargon-salad",
+      "claims": [
+        {
+          "text": "Evidence windows are anchored to the LEDGER's git-commit timestamps, so an evidence window automatically slides forward each time a descendant scope commits \u2014 meaning provenance for a claim is re-validated on every downstream COMMIT in the galaxy. A claim whose evidence window has had no descendant commits within the window length is auto-expired and ejected from the corpus.",
+          "terms": [
+            "Evidence windows",
+            "LEDGER",
+            "git-commit timestamps",
+            "COMMIT",
+            "galaxy",
+            "provenance",
+            "corpus",
+            "auto-expired"
+          ]
+        }
+      ],
+      "why_false": "Evidence windows define the validity period for a piece of evidence backing a claim; they are not driven by, nor do they 'slide forward' on, unrelated descendant-scope commits, and content is not auto-ejected from the corpus for lack of downstream commit activity. The described coupling between an arbitrary downstream COMMIT and a claim's evidence re-validation/expiry is unsupported and conflates the append-only LEDGER with evidence-window semantics."
+    },
+    {
+      "id": "FT-jargon-salad-06",
+      "strategy": "jargon-salad",
+      "claims": [
+        {
+          "text": "Under the compiler-theory mapping, Inheritance is CANONIC's type system and Introspection is its scope resolution \u2014 which is why type errors in a CANON manifest surface as VOCAB.md resolution failures, and why undefined-term errors are reported as inheritance-chain breaks. The two are formally dual, so fixing a broken parent edge always clears the corresponding undefined-term diagnostic.",
+          "terms": [
+            "compiler-theory mapping",
+            "Inheritance",
+            "type system",
+            "Introspection",
+            "scope resolution",
+            "CANON",
+            "VOCAB.md",
+            "inheritance-chain"
+          ]
+        }
+      ],
+      "why_false": "The documented mapping is the reverse: Inheritance\u2194scope-resolution and Introspection\u2194type-system. The claim swaps the two correspondences and then builds a fictitious 'duality' in which fixing a parent edge clears undefined-term errors. Undefined-term (Introspection/type-system) failures and inheritance-chain (scope-resolution) failures are distinct diagnostics; repairing a parent edge does not resolve a missing VOCAB definition."
+    },
+    {
+      "id": "FT-jargon-salad-07",
+      "strategy": "jargon-salad",
+      "claims": [
+        {
+          "text": "The CANONIC Foundation's 501c3 status is what makes the LEDGER legally append-only: because the Foundation is the named git remote of record, any force-push or history rewrite constitutes a 501c3 governance breach and is rejected at the federation layer. This is the legal basis for content-addressed provenance being admissible as a tamper-evident chain of custody.",
+          "terms": [
+            "CANONIC Foundation",
+            "501c3",
+            "LEDGER",
+            "append-only",
+            "git remote",
+            "force-push",
+            "federation",
+            "content-addressed provenance",
+            "chain of custody"
+          ]
+        }
+      ],
+      "why_false": "The LEDGER's append-only property is a technical/governance discipline (enforced by hooks, e.g. destructive-reset guards, and git's content-addressing), not a legal consequence of 501c3 tax-exempt status \u2014 501c3 governs nonprofit taxation/charitable purpose, not git push semantics. There is no mechanism by which a force-push 'constitutes a 501c3 breach,' and tying admissibility/chain-of-custody to the Foundation's tax status is fabricated."
+    },
+    {
+      "id": "FT-jargon-salad-08",
+      "strategy": "jargon-salad",
+      "claims": [
+        {
+          "text": "Corpus admission is decided by a quorum of Validators-as-a-Service nodes voting in COIN-weighted stake: a document enters the corpus only once VaaS validators holding \u226551% of the scope's circulating COIN sign the LEDGER entry. This proof-of-stake admission is what the MAGIC 255 score discretizes \u2014 255 being the eight-bit encoding of a fully-staked unanimous quorum.",
+          "terms": [
+            "Corpus admission",
+            "quorum",
+            "Validators-as-a-Service",
+            "VaaS",
+            "COIN-weighted stake",
+            "proof-of-stake",
+            "LEDGER",
+            "MAGIC 255",
+            "eight-bit"
+          ]
+        }
+      ],
+      "why_false": "CANONIC decides corpus admission like a compiler decides well-formedness (deterministic axiom/gate checks: Triad, Inheritance, Introspection, six-move closure), not by COIN-weighted proof-of-stake validator voting \u2014 COIN is a token economy for work, not a staking/voting weight for admission. MAGIC 255 is a multi-dimension completeness score (commonly an 8-dimension rubric), not an 'eight-bit encoding of a unanimous staked quorum.' The entire stake-voting admission mechanism and the 255 reinterpretation are invented."
+    },
+    {
+      "id": "FT-overclaimed-theorem-01",
+      "strategy": "overclaimed-theorem",
+      "claims": [
+        {
+          "text": "The CANONIC validator suite is provably complete: for every well-formed scope that satisfies the Triad, there exists a finite VaaS run that accepts it, and the completeness proof reduces to the decidability of CANON.md parent-chain termination. Because every Inheritance chain terminates at root by construction, the validator is guaranteed to halt with an ACCEPT on all admissible corpora.",
+          "terms": [
+            "completeness",
+            "Triad",
+            "VaaS",
+            "Inheritance chain",
+            "parent-chain termination",
+            "decidable"
+          ]
+        }
+      ],
+      "why_false": "This conflates chain-termination (a structural property of the parent pointer graph) with logical completeness of the validator. Completeness in the formal sense would require that every semantically valid scope is accepted, which is not established by any CANONIC artifact; the Triad and Inheritance rules are syntactic/structural checks and do not constitute a completeness theorem. There is no proof that the validators accept all well-formed corpora, and the claim that completeness 'reduces to' chain termination is a non-sequitur \u2014 termination of inheritance resolution says nothing about whether the acceptance relation covers all valid inputs. It is fabricated as a 'proven' guarantee."
+    },
+    {
+      "id": "FT-overclaimed-theorem-02",
+      "strategy": "overclaimed-theorem",
+      "claims": [
+        {
+          "text": "Validators-as-a-Service is sound by the COIN double-entry invariant: no invalid content can ever mint COIN because the LEDGER is an append-only git structure, and the soundness proof is the observation that the LEDGER never records a rejected hash. Therefore acceptance by VaaS is a sufficient condition for corpus validity, with zero false positives across the galaxy graph.",
+          "terms": [
+            "soundness",
+            "VaaS",
+            "COIN",
+            "double-entry invariant",
+            "append-only LEDGER",
+            "false positives",
+            "galaxy graph"
+          ]
+        }
+      ],
+      "why_false": "Soundness (never accepting an invalid input) cannot be proven from the LEDGER being append-only; append-only git only guarantees record immutability, not that accepted content is actually valid. The argument is circular \u2014 it defines validity as 'whatever VaaS accepted' and then concludes acceptance implies validity. 'Zero false positives' is an empirical/formal claim with no supporting proof, and double-entry bookkeeping prevents accounting drift in COIN balances, not semantic misclassification of content. No CANONIC soundness theorem exists."
+    },
+    {
+      "id": "FT-overclaimed-theorem-03",
+      "strategy": "overclaimed-theorem",
+      "claims": [
+        {
+          "text": "Corpus admission under CANONIC is decidable in the strong sense: the validator is a total decision procedure because MAGIC 255 scoring assigns every scope a fixed-point byte in [0,255] in bounded time, and decidability follows from the scoring function being a contraction mapping over the galaxy graph. The six-move closure DECLARE\u2192READ\u2192CONSUME\u2192GATE\u2192PROPAGATE\u2192COMMIT is the constructive proof that the fixed point always exists and is unique.",
+          "terms": [
+            "decidable",
+            "total decision procedure",
+            "MAGIC 255",
+            "fixed-point",
+            "contraction mapping",
+            "galaxy graph",
+            "six-move closure"
+          ]
+        }
+      ],
+      "why_false": "MAGIC 255 is a scoring/health metric, not a decision procedure, and there is no established result that it is a contraction mapping or that admission corresponds to a unique fixed point \u2014 Banach fixed-point machinery is borrowed metaphorically with no metric space, contraction constant, or completeness of the space ever defined. The six-move closure is an operational governance workflow (declare/read/consume/gate/propagate/commit), not a constructive existence-and-uniqueness proof. Decidability of corpus admission in general is unsupported; introspection over arbitrary VOCAB term definitions need not be decidable, and nothing bounds VaaS to total termination on all inputs."
+    },
+    {
+      "id": "FT-overclaimed-theorem-04",
+      "strategy": "overclaimed-theorem",
+      "claims": [
+        {
+          "text": "The Introspection axiom makes CANONIC's type system decidable and complete simultaneously: because VOCAB.md must define every term used in a scope, term-resolution is a confluent rewriting system with the strong normalization property, so type-checking always terminates and accepts exactly the well-typed scopes. This is the CANONIC analogue of the decidability of simply-typed lambda calculus, inherited through the Triad\u2194syntax / Introspection\u2194type-system correspondence.",
+          "terms": [
+            "Introspection axiom",
+            "VOCAB.md",
+            "decidable",
+            "complete",
+            "confluent rewriting",
+            "strong normalization",
+            "well-typed",
+            "type-system correspondence"
+          ]
+        }
+      ],
+      "why_false": "The Triad\u2194syntax / Introspection\u2194type-system mapping is an explanatory analogy, not a formal embedding that transfers metatheorems. Requiring VOCAB.md to define terms does not establish confluence or strong normalization \u2014 VOCAB cross-references (e.g. `see ../API/VOCAB.md#cors`) form an arbitrary pointer graph that can cycle or dangle, the opposite of guaranteed normalization. Simultaneous soundness-and-completeness of a type system is a strong, separately-proven property; importing it 'by correspondence' to simply-typed lambda calculus is unjustified, since CANONIC defines no typing judgments, reduction relation, or subject-reduction lemma."
+    },
+    {
+      "id": "FT-overclaimed-theorem-05",
+      "strategy": "overclaimed-theorem",
+      "claims": [
+        {
+          "text": "CANONIC validators are confluent and order-independent by the six-move closure: GATE results are invariant under any interleaving of READ and CONSUME, so the validator exhibits the Church-Rosser property and any two VaaS runs on the same content-addressed input reach the identical MAGIC 255 score. Content-addressed provenance is the proof obligation that discharges confluence, since identical hashes force identical normal forms.",
+          "terms": [
+            "confluent",
+            "six-move closure",
+            "GATE",
+            "Church-Rosser property",
+            "VaaS",
+            "content-addressed provenance",
+            "MAGIC 255",
+            "normal forms"
+          ]
+        }
+      ],
+      "why_false": "Content-addressing guarantees that identical bytes hash identically; it says nothing about whether the validation procedure is confluent or produces order-independent results. The Church-Rosser property requires a defined reduction relation and a diamond/local-confluence lemma, none of which CANONIC specifies. In practice MAGIC scores depend on cross-scope state (galaxy BFS, inherited axioms, freshness windows) that can change between runs, so two VaaS runs on the same hash can diverge \u2014 directly contradicting the claimed invariance. 'Identical hashes force identical normal forms' is a fabricated proof obligation."
+    },
+    {
+      "id": "FT-overclaimed-theorem-06",
+      "strategy": "overclaimed-theorem",
+      "claims": [
+        {
+          "text": "Inherited axioms are final, therefore CANONIC inheritance is monotone and the validator is consistent: adding any child scope can only shrink the accepted set, never accept something a parent rejected, which is proved by treating each CANON.md as a Horn clause and the parent chain as stratified negation-free Datalog. Consistency of the whole galaxy graph thus follows from the well-known consistency of stratified Datalog programs.",
+          "terms": [
+            "inherited axioms are final",
+            "monotone",
+            "consistent",
+            "Horn clause",
+            "stratified Datalog",
+            "negation-free",
+            "galaxy graph"
+          ]
+        }
+      ],
+      "why_false": "CANON.md axioms are natural-language MUST/MUST NOT constraints, not Horn clauses, and there is no compilation of the governance tree into a Datalog program \u2014 the Datalog/stratification framing is invented. 'Inherited axioms are final' is an override/precedence rule, which is non-monotone in spirit (children cannot relax parents, but the system includes MUST NOT prohibitions and GOV_OVERRIDE precedence that are not negation-free). No consistency theorem about the galaxy graph has been proven, and borrowing 'consistency of stratified Datalog' provides no guarantee about a system that was never expressed as such a program."
+    },
+    {
+      "id": "FT-overclaimed-theorem-07",
+      "strategy": "overclaimed-theorem",
+      "claims": [
+        {
+          "text": "VaaS validation is in P and the corpus-admission problem is NL-complete: because the galaxy graph traversal that backs every gate is a reachability check over PARENT and INHERITS edges, and reachability is NL-complete, admission inherits the same complexity class and is therefore tractable and parallelizable with a logspace verifier. Evidence-window checks add only a constant factor and do not change the class.",
+          "terms": [
+            "VaaS",
+            "in P",
+            "NL-complete",
+            "galaxy graph traversal",
+            "PARENT and INHERITS edges",
+            "reachability",
+            "logspace verifier",
+            "evidence-window"
+          ]
+        }
+      ],
+      "why_false": "Graph reachability being NL-complete does not imply that the full corpus-admission problem is NL-complete \u2014 admission involves text parsing, VOCAB term resolution, MAGIC scoring, secret/enum scanning, and freshness evaluation, none of which are mere reachability and several of which are not obviously logspace. The reduction is asserted, not constructed; no hardness proof (admission \u2265 some NL-complete problem) or membership proof is given. The 'constant factor' claim about evidence windows is unsupported hand-waving, and no CANONIC document establishes any complexity class for validation."
+    },
+    {
+      "id": "FT-overclaimed-theorem-08",
+      "strategy": "overclaimed-theorem",
+      "claims": [
+        {
+          "text": "The CANONIC Foundation's VaaS carries a refutation-completeness guarantee: any corpus entry that violates a governed invariant is rejected in finitely many gate steps, proven by treating the validator as a sound and complete resolution prover over the inherited axiom set. Because resolution is refutation-complete, the absence of a rejection certificate is a formal proof of corpus validity admissible as content-addressed evidence.",
+          "terms": [
+            "CANONIC Foundation",
+            "VaaS",
+            "refutation-completeness",
+            "governed invariant",
+            "gate steps",
+            "sound and complete resolution prover",
+            "rejection certificate",
+            "content-addressed evidence"
+          ]
+        }
+      ],
+      "why_false": "CANONIC validators are not resolution provers and the governed invariants are not a clause set over which resolution operates, so refutation-completeness (a metatheorem of first-order resolution) does not apply. Even if it did, refutation-completeness only guarantees that a refutation exists for unsatisfiable sets given unbounded search \u2014 it does not bound rejection to 'finitely many gate steps' for all violations, and it never licenses the converse inference that 'no rejection certificate \u21d2 valid' (that is affirming-the-consequent / appeal to ignorance). Treating absence of a rejection as a positive proof of validity is logically invalid and unsupported by any CANONIC evidence-window or provenance mechanism."
+    },
+    {
+      "id": "FT-misattributed-provenance-01",
+      "strategy": "misattributed-provenance",
+      "claims": [
+        {
+          "text": "MAGIC 255 scoring was originally a VaaS-side enforcement gate: Validators-as-a-Service computed the 255 ceiling at the edge and refused any content whose score fell below the threshold before it could reach the LEDGER. The eight scoring dimensions were defined in the VaaS validator contract, not in MAGIC/CANON.md, which is why the score is called MAGIC 255 rather than VaaS 255.",
+          "terms": [
+            "MAGIC 255",
+            "VaaS",
+            "Validators-as-a-Service",
+            "LEDGER",
+            "eight scoring dimensions",
+            "MAGIC/CANON.md"
+          ]
+        }
+      ],
+      "why_false": "MAGIC 255 is a governance completeness/health score defined and enforced in the MAGIC scope (canonic-canonic/MAGIC/CANON.md) and enforced by magic_lib at build time and by the magic_255 harness invariant at Stop \u2014 it is not a VaaS edge gate that runs before LEDGER admission. The name derives from the 8-bit byte ceiling (2^8-1 = 255), not from a 'VaaS validator contract.' Attributing the dimension definitions and the ceiling computation to VaaS misplaces the capability into the wrong layer."
+    },
+    {
+      "id": "FT-misattributed-provenance-02",
+      "strategy": "misattributed-provenance",
+      "claims": [
+        {
+          "text": "The six-move closure was originally a five-move sequence (DECLARE\u2192READ\u2192CONSUME\u2192GATE\u2192PROPAGATE) and the COMMIT move was retrofitted into the COIN economy scope, because COMMIT is fundamentally a token-minting event: every closure's final move mints COIN against the LEDGER. This is why COMMIT lives in COIN/CANON.md and the other five moves live in META/CANON.md.",
+          "terms": [
+            "six-move closure",
+            "five-move sequence",
+            "COMMIT",
+            "COIN",
+            "LEDGER",
+            "COIN/CANON.md",
+            "META/CANON.md"
+          ]
+        }
+      ],
+      "why_false": "COMMIT is a git-durability move (a commit landed in git), not a COIN-minting event, and it is governed in META/CANON.md alongside the other moves (PROPAGATE_COMMITS_OR_FAILS axiom + \u00a7 Closure Commit Contract + verify-closure-committed), not in COIN/CANON.md. The five\u2192six evolution is real, but COMMIT was added as a universal git-durability invariant, not relocated into the token economy. COIN minting and the COMMIT move are unrelated mechanisms."
+    },
+    {
+      "id": "FT-misattributed-provenance-03",
+      "strategy": "misattributed-provenance",
+      "claims": [
+        {
+          "text": "The Triad axiom requires four files, not three: CANON.md, VOCAB.md, README.md, and LEDGER.md. The fourth file (LEDGER.md) was added in the Epoch 2 flatten so that every scope carries its own append-only ledger, which is what makes the LEDGER 'git-native at every scope' rather than a single root ledger. A scope missing LEDGER.md fails the Triad gate.",
+          "terms": [
+            "Triad axiom",
+            "CANON.md",
+            "VOCAB.md",
+            "README.md",
+            "LEDGER.md",
+            "Epoch 2 flatten",
+            "append-only ledger",
+            "Triad gate"
+          ]
+        }
+      ],
+      "why_false": "The Triad is by definition three files (CANON.md + VOCAB.md + README.md) \u2014 the name 'Triad' and the compiler-theory mapping (Triad\u2194syntax) encode exactly three. There is no per-scope LEDGER.md requirement; the LEDGER is implemented as git itself (the commit history), not as a per-scope markdown file. The Epoch 2 flatten promoted COIN/INTEL/LEDGER/EVIDENCE from VAULT children to flat SERVICES peers; it did not add a fourth Triad file."
+    },
+    {
+      "id": "FT-misattributed-provenance-04",
+      "strategy": "misattributed-provenance",
+      "claims": [
+        {
+          "text": "Inheritance resolution is performed by the galaxy graph at query time: because every CANON declares a parent and chains terminate at root, the galaxy graph's INHERITS edges are the authoritative inheritance mechanism, and the CANON.md parent: field is merely a cached hint the galaxy build regenerates. If the parent: field and the galaxy INHERITS edge disagree, the galaxy edge wins.",
+          "terms": [
+            "Inheritance",
+            "galaxy graph",
+            "INHERITS edges",
+            "CANON declares a parent",
+            "chains terminate at root",
+            "parent: field"
+          ]
+        }
+      ],
+      "why_false": "Inheritance is declared in CANON.md (the parent declaration is the source of truth, mapping to scope-resolution); the galaxy graph is a compiled derivative built FROM the CANON declarations, not the authority over them. INHERITS edges are forward cross-axiomatic discovery edges used in BFS traversal, while the tree spine is PARENT edges \u2014 conflating INHERITS with the inheritance-of-axioms mechanism and asserting the derived graph overrides the source CANON inverts the actual data-flow direction (governance declares, compiler reads)."
+    },
+    {
+      "id": "FT-misattributed-provenance-05",
+      "strategy": "misattributed-provenance",
+      "claims": [
+        {
+          "text": "Introspection (VOCAB.md defines every term used) is enforced cross-scope by the no_hardcoded_enum harness invariant: any term appearing in a CANON.md that is not defined in that scope's VOCAB.md is treated as a hardcoded enum literal and blocked at PreToolUse. This is why VOCAB introspection and the enum-literal ban are the same gate under the hood.",
+          "terms": [
+            "Introspection",
+            "VOCAB.md",
+            "no_hardcoded_enum",
+            "harness invariant",
+            "hardcoded enum literal",
+            "PreToolUse",
+            "CANON.md"
+          ]
+        }
+      ],
+      "why_false": "no_hardcoded_enum bans new string literals on the bin/+lib/+workers/+APPS scan surface that match a governed enum family (scope paths, ledger event types, hostnames, etc.) and redirects to generated mirrors \u2014 it has nothing to do with VOCAB term definitions in CANON.md prose. Introspection (VOCAB completeness) is a separate Triad-adjacent concern enforced by VOCAB-coverage checks, not by the enum-literal PreToolUse gate. The claim fuses two unrelated enforcement mechanisms."
+    },
+    {
+      "id": "FT-misattributed-provenance-06",
+      "strategy": "misattributed-provenance",
+      "claims": [
+        {
+          "text": "Content-addressed provenance and evidence windows are properties of the COIN token: each minted COIN carries the content hash of the work it was minted against plus the evidence window during which that work remains spendable, after which the COIN expires. The evidence window is therefore the COIN's time-to-live, governed in COIN/CANON.md \u00a7 UNIT_STABLE.",
+          "terms": [
+            "Content-addressed provenance",
+            "evidence windows",
+            "COIN token",
+            "content hash",
+            "evidence window",
+            "time-to-live",
+            "COIN/CANON.md",
+            "UNIT_STABLE"
+          ]
+        }
+      ],
+      "why_false": "Evidence windows are a property of evidence/claims (the period during which a claim's supporting evidence is considered valid), not a per-token TTL on COIN, and COIN does not expire \u2014 \u00a7 UNIT_STABLE governs the stable $1/credit rate and supply ceiling, not an evidence-window TTL. Content-addressed provenance is a corpus/LEDGER property (content hashing of governed documents), not a field minted into each COIN. The cluster attributes two unrelated governance concepts to the token's lifecycle."
+    },
+    {
+      "id": "FT-misattributed-provenance-07",
+      "strategy": "misattributed-provenance",
+      "claims": [
+        {
+          "text": "The CANONIC Foundation (501c3) is the root scope of the galaxy graph: every CANON's parent chain terminates at the FOUNDATION node, which is the 501c3 entity, making the legal nonprofit the literal graph root from which all inherited axioms descend. This is why 'inherited axioms are final' \u2014 finality is conferred by the 501c3's charter.",
+          "terms": [
+            "CANONIC Foundation",
+            "501c3",
+            "root scope",
+            "galaxy graph",
+            "parent chain terminates",
+            "FOUNDATION node",
+            "inherited axioms are final",
+            "charter"
+          ]
+        }
+      ],
+      "why_false": "The graph root is the governance root scope (canonic-canonic, with FOUNDATION/MAGIC/SERVICES/INDUSTRIES/USERS/CHARTER as top-level scopes), not the 501c3 legal entity \u2014 the Foundation is an organizational/legal body, not the galaxy graph's literal terminating node. Axiom finality is a governance/scope-resolution property (inherited axioms cannot be overridden by descendants), entirely independent of the nonprofit's legal charter. The claim conflates a legal entity with a graph topology root."
+    },
+    {
+      "id": "FT-misattributed-provenance-08",
+      "strategy": "misattributed-provenance",
+      "claims": [
+        {
+          "text": "The galaxy graph was introduced in the Epoch 2 flatten commit and originally lived in the LEDGER service; the CLAUDE.md compiler's BFS traversal was added later when galaxy.json was migrated from LEDGER/ to MAGIC/. Before that migration, CLAUDE.md was compiled from hardcoded scope paths walked directly off the filesystem rather than from the graph.",
+          "terms": [
+            "galaxy graph",
+            "Epoch 2 flatten",
+            "LEDGER service",
+            "CLAUDE.md compiler",
+            "BFS traversal",
+            "galaxy.json",
+            "hardcoded scope paths"
+          ]
+        }
+      ],
+      "why_false": "The galaxy graph (galaxy.json, ~6494 nodes) is built by the MAGIC-scope phase 07-scopes-galaxy and consumed by phase 09-compile-claude; it was never a LEDGER-service artifact migrated out of LEDGER/. The CLAUDE compiler is explicitly graph-native and the operating invariants forbid hardcoding scope paths (MUST NOT: Hardcode scope paths \u2014 discover via galaxy graph). Inventing a prior 'hardcoded filesystem walk era' and a LEDGER\u2192MAGIC migration commit fabricates a provenance history that contradicts the stated graph-native-from-design architecture."
+    }
+  ]
+}

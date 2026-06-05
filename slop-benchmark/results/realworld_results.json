@@ -1,0 +1,84 @@
+{
+  "n": 47,
+  "n_legit": 30,
+  "n_slop": 17,
+  "judge": "openai",
+  "association": {
+    "T-structure": {
+      "phi": 0.0,
+      "f1": 0.0,
+      "catch_slop": 0.0,
+      "false_reject_legit": 0.0
+    },
+    "B3-similarity": {
+      "phi": -0.196,
+      "f1": 0.508,
+      "catch_slop": 0.941,
+      "false_reject_legit": 1.0
+    },
+    "B2-semantic": {
+      "phi": 0.27,
+      "f1": 0.483,
+      "catch_slop": 0.412,
+      "false_reject_legit": 0.167
+    }
+  },
+  "by_source": {
+    "arxiv-cs.LG": {
+      "n": 8,
+      "b2_caught": 1,
+      "panel_slop": 2,
+      "gt_slop": false,
+      "b2_catch_rate": 0.125,
+      "panel_slop_rate": 0.25
+    },
+    "arxiv-cs.CL": {
+      "n": 6,
+      "b2_caught": 3,
+      "panel_slop": 2,
+      "gt_slop": false,
+      "b2_catch_rate": 0.5,
+      "panel_slop_rate": 0.333
+    },
+    "arxiv-q-bio.GN": {
+      "n": 8,
+      "b2_caught": 0,
+      "panel_slop": 1,
+      "gt_slop": false,
+      "b2_catch_rate": 0.0,
+      "panel_slop_rate": 0.125
+    },
+    "arxiv-stat.ML": {
+      "n": 8,
+      "b2_caught": 1,
+      "panel_slop": 0,
+      "gt_slop": false,
+      "b2_catch_rate": 0.125,
+      "panel_slop_rate": 0.0
+    },
+    "predatory-journal": {
+      "n": 6,
+      "b2_caught": 1,
+      "panel_slop": 2,
+      "gt_slop": true,
+      "b2_catch_rate": 0.167,
+      "panel_slop_rate": 0.333
+    },
+    "content-farm": {
+      "n": 5,
+      "b2_caught": 5,
+      "panel_slop": 5,
+      "gt_slop": true,
+      "b2_catch_rate": 1.0,
+      "panel_slop_rate": 1.0
+    },
+    "retracted-fraud": {
+      "n": 6,
+      "b2_caught": 1,
+      "panel_slop": 0,
+      "gt_slop": true,
+      "b2_catch_rate": 0.167,
+      "panel_slop_rate": 0.0
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# Regenerable bulk — NOT committed (rebuildable from the harness + manifests).
+# Keep: *.py harness, EXPERIMENT.md, PREREGISTRATION.md, *_manifest.json,
+#       *_corpus.json / *_slop.json / *_legit.json, ledger.json, results/*.md,
+#       and the small results/*results*.json + results/interpret.json + nonparametric.json.
+
+# Generated governed-scope trees (one dir per benchmark item)
+corpus/
+corpus_redteam/
+corpus_tournament/
+corpus_realworld/
+
+# Embedding caches + the passage index (regenerable; large)
+results/passage_index.json
+results/passage_emb_cache.json
+results/embed_cache.json
+results/cache.json
+results/redteam_cache.json
+
+# Logs + python caches
+results/*.log
+**/__pycache__/
+*.pyc

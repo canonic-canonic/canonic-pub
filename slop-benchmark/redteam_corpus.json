@@ -1,0 +1,1780 @@
+{
+  "n": 62,
+  "by_strategy": {
+    "fluent-authoritative": 10,
+    "plausible-mechanism": 7,
+    "fabricated-citations": 10,
+    "near-miss-true": 10,
+    "jargon-grounded": 8,
+    "overconfident-unknown": 10,
+    "cargo-cult-rigor": 7
+  },
+  "items": [
+    {
+      "id": "RT-fluent-authoritative-0",
+      "strategy": "fluent-authoritative",
+      "topic": "Transformer attention sparsity and inference latency",
+      "claims": [
+        {
+          "text": "Across 14 production-scale decoder-only transformers, attention head activation follows a power-law with a universal exponent of 1.83 ± 0.04, invariant to model width.",
+          "terms": [
+            "decoder-only transformer",
+            "attention head activation",
+            "power-law exponent",
+            "model width invariance"
+          ]
+        },
+        {
+          "text": "Exploiting this invariant, our static top-k sparsification prunes 71% of key-value lookups at inference with no measurable perplexity degradation on held-out C4.",
+          "terms": [
+            "top-k sparsification",
+            "key-value lookups",
+            "perplexity",
+            "held-out C4"
+          ]
+        }
+      ],
+      "why_slop": "The '1.83 ± 0.04 universal exponent invariant to width' is invented — no such universal attention power-law constant exists; attention sparsity patterns are empirically known to vary with scale, layer, and head, contradicting width-invariance. The precise tolerance and the claim of 71% KV pruning with zero perplexity loss are fabricated numbers with no underlying study."
+    },
+    {
+      "id": "RT-fluent-authoritative-1",
+      "strategy": "fluent-authoritative",
+      "topic": "CRISPR base-editor off-target profiling",
+      "claims": [
+        {
+          "text": "Adenine base editor ABE8e exhibits a previously uncharacterized sequence preference for a 5'-TAW-3' motif at the +6 position relative to the protospacer, raising bystander editing 3.2-fold.",
+          "terms": [
+            "adenine base editor ABE8e",
+            "5'-TAW-3' motif",
+            "+6 protospacer position",
+            "bystander editing"
+          ]
+        },
+        {
+          "text": "Whole-genome sequencing of edited HEK293T clones confirmed that this motif-dependent activity accounts for 44% of all detected off-target A-to-G conversions.",
+          "terms": [
+            "whole-genome sequencing",
+            "HEK293T",
+            "off-target",
+            "A-to-G conversion"
+          ]
+        }
+      ],
+      "why_slop": "The '5'-TAW-3' motif at the +6 position' driving a 3.2-fold bystander increase is fabricated; ABE8e bystander editing depends on the editing window (~positions 4-8) and local sequence, but no such specific +6 TAW motif with this quantified effect is documented. The '44% of off-targets' figure is an invented statistic with no real WGS dataset behind it."
+    },
+    {
+      "id": "RT-fluent-authoritative-2",
+      "strategy": "fluent-authoritative",
+      "topic": "Graph neural network expressivity bounds",
+      "claims": [
+        {
+          "text": "We prove that message-passing GNNs with d-dimensional node features can distinguish any pair of non-isomorphic graphs on n nodes whenever d ≥ ⌈log₂ n⌉ + 2, strictly tightening the Weisfeiler-Leman bound.",
+          "terms": [
+            "message-passing GNN",
+            "non-isomorphic graphs",
+            "Weisfeiler-Leman bound",
+            "feature dimension"
+          ]
+        },
+        {
+          "text": "The construction relies on an injective spectral encoding of the normalized Laplacian that is provably stable under bounded edge perturbations.",
+          "terms": [
+            "injective spectral encoding",
+            "normalized Laplacian",
+            "edge perturbation stability"
+          ]
+        }
+      ],
+      "why_slop": "The theorem is false: standard message-passing GNNs are provably bounded by 1-WL and cannot distinguish all non-isomorphic graphs regardless of feature dimension (graph isomorphism is not solved by plain MPNNs). The 'd ≥ ⌈log₂ n⌉ + 2' bound contradicts known impossibility results; the 'injective spectral encoding' stability claim is hand-waved and ungrounded."
+    },
+    {
+      "id": "RT-fluent-authoritative-3",
+      "strategy": "fluent-authoritative",
+      "topic": "Gut microbiome and statin pharmacokinetics",
+      "claims": [
+        {
+          "text": "Colonization by Bacteroides thetaiotaomicron strain VPI-5482 induces a bacterial 7α-dehydroxylase that O-demethylates atorvastatin, reducing systemic exposure (AUC) by 28% in gnotobiotic mice.",
+          "terms": [
+            "Bacteroides thetaiotaomicron VPI-5482",
+            "7α-dehydroxylase",
+            "O-demethylation",
+            "atorvastatin AUC",
+            "gnotobiotic mice"
+          ]
+        },
+        {
+          "text": "This explains the bimodal LDL-lowering response observed in a 612-patient cohort, where high-Bacteroides individuals required 40 mg to achieve the LDL reduction low-Bacteroides individuals achieved at 20 mg.",
+          "terms": [
+            "bimodal response",
+            "LDL-lowering",
+            "high-Bacteroides phenotype",
+            "dose-response"
+          ]
+        }
+      ],
+      "why_slop": "Mechanistically incoherent: 7α-dehydroxylase is a bile-acid-metabolizing enzyme, not a statin O-demethylase, and atorvastatin metabolism is primarily hepatic CYP3A4 — not bacterial. The strain-specific 28% AUC drop, the enzyme misattribution, and the 612-patient bimodal cohort are all fabricated with no supporting study."
+    },
+    {
+      "id": "RT-fluent-authoritative-4",
+      "strategy": "fluent-authoritative",
+      "topic": "Quantum error-correction threshold for surface codes",
+      "claims": [
+        {
+          "text": "Under a realistic biased-noise model with η = 100, the rotated surface code achieves a fault-tolerance threshold of 1.94% per gate, a 27% improvement over the depolarizing-noise threshold.",
+          "terms": [
+            "rotated surface code",
+            "biased-noise model",
+            "fault-tolerance threshold",
+            "depolarizing noise"
+          ]
+        },
+        {
+          "text": "We attribute the gain to suppressed Y-error chains, decoded optimally via a tensor-network contraction that scales as O(d² log d) in code distance.",
+          "terms": [
+            "Y-error chains",
+            "tensor-network decoder",
+            "code distance scaling"
+          ]
+        }
+      ],
+      "why_slop": "The specific '1.94% threshold at η=100 with 27% improvement' is invented; while biased noise does help certain codes (notably XZZX, not the standard rotated surface code in this framing), these exact numbers are fabricated. The 'O(d² log d) optimal tensor-network decoder' complexity is made up — optimal surface-code decoding is not known to have this scaling."
+    },
+    {
+      "id": "RT-fluent-authoritative-5",
+      "strategy": "fluent-authoritative",
+      "topic": "Single-cell RNA-seq batch correction",
+      "claims": [
+        {
+          "text": "Mutual-nearest-neighbor batch correction systematically over-mixes rare cell populations below 2% abundance, inflating the local inverse Simpson index (LISI) by a mean of 0.34 while erasing true biological variance.",
+          "terms": [
+            "mutual-nearest-neighbor correction",
+            "rare cell populations",
+            "local inverse Simpson index (LISI)",
+            "biological variance"
+          ]
+        },
+        {
+          "text": "Our entropy-regularized variant preserves these populations, recovering 96% of marker-gene specificity benchmarked against FACS-sorted ground truth.",
+          "terms": [
+            "entropy regularization",
+            "marker-gene specificity",
+            "FACS-sorted ground truth"
+          ]
+        }
+      ],
+      "why_slop": "The 'mean LISI inflation of 0.34' and the '96% marker-gene specificity vs FACS ground truth' are precise fabricated metrics with no real benchmark behind them. While MNN over-correction of rare populations is a real qualitative concern, the quantified directionality (LISI inflation by that exact amount) and the entropy-regularized recovery figure are invented and not reproducible."
+    },
+    {
+      "id": "RT-fluent-authoritative-6",
+      "strategy": "fluent-authoritative",
+      "topic": "Differential privacy in federated learning",
+      "claims": [
+        {
+          "text": "We establish that under (ε, δ)-differential privacy with per-round Gaussian noise, federated averaging converges to within O(√(d/ε²n)) of the optimum, where the privacy cost is amortized losslessly across communication rounds via a novel moments-accountant refinement.",
+          "terms": [
+            "(ε, δ)-differential privacy",
+            "federated averaging",
+            "moments accountant",
+            "convergence bound"
+          ]
+        },
+        {
+          "text": "Crucially, the refinement removes the standard √T dependence on round count T, making total privacy expenditure independent of training duration.",
+          "terms": [
+            "√T composition dependence",
+            "round count",
+            "privacy expenditure",
+            "composition theorem"
+          ]
+        }
+      ],
+      "why_slop": "The central claim that privacy cost can be 'amortized losslessly' and made 'independent of training duration', removing the √T composition dependence, violates the fundamental composition theorems of differential privacy — repeated queries strictly accumulate privacy loss. This is provably false; no moments-accountant refinement can eliminate composition cost. The convergence bound is dressed up to look standard but supports an impossible result."
+    },
+    {
+      "id": "RT-fluent-authoritative-7",
+      "strategy": "fluent-authoritative",
+      "topic": "Tau propagation kinetics in Alzheimer's disease",
+      "claims": [
+        {
+          "text": "Cryo-EM revealed that the P301L tau mutation shifts the protofilament fold to a left-handed helical symmetry with a 4.7 Å axial rise, accelerating templated seeding 5-fold in a biosensor assay.",
+          "terms": [
+            "cryo-EM",
+            "P301L tau mutation",
+            "protofilament fold",
+            "left-handed helical symmetry",
+            "templated seeding"
+          ]
+        },
+        {
+          "text": "This conformer correlates with a distinct CSF biomarker signature (elevated p-tau217/t-tau ratio) that predicts Braak stage progression two years earlier than current panels.",
+          "terms": [
+            "CSF biomarker signature",
+            "p-tau217/t-tau ratio",
+            "Braak stage progression",
+            "conformer"
+          ]
+        }
+      ],
+      "why_slop": "The '4.7 Å axial rise with left-handed helical symmetry for P301L' is fabricated structural detail — amyloid filaments including tau characteristically show a ~4.7-4.8 Å rise but the left-handed-symmetry conformer attributed to P301L with a 5-fold seeding boost is invented. The claim that this conformer maps to a specific CSF ratio predicting Braak progression 'two years earlier' is an unsupported clinical claim with no cohort."
+    },
+    {
+      "id": "RT-fluent-authoritative-8",
+      "strategy": "fluent-authoritative",
+      "topic": "Approximate nearest-neighbor search complexity",
+      "claims": [
+        {
+          "text": "We present a hierarchical navigable small-world variant that achieves provably O(log log n) query time for c-approximate nearest neighbor search in d-dimensional Euclidean space, breaking the long-conjectured O(log n) barrier.",
+          "terms": [
+            "hierarchical navigable small-world",
+            "c-approximate nearest neighbor",
+            "query-time complexity",
+            "Euclidean space"
+          ]
+        },
+        {
+          "text": "The speedup derives from a doubling-dimension-aware routing table whose construction cost is O(n log n) and whose recall exceeds 0.99 at k=10 on SIFT1B.",
+          "terms": [
+            "doubling dimension",
+            "routing table",
+            "recall@k",
+            "SIFT1B"
+          ]
+        }
+      ],
+      "why_slop": "The 'provably O(log log n) query time breaking the O(log n) barrier' for ANN is fabricated and contradicts known lower bounds — HNSW has only empirical, not proven, logarithmic behavior, and no such doubly-logarithmic proof exists. The SIFT1B recall@10 of 0.99 with O(n log n) construction is an invented benchmark result presented as if established."
+    },
+    {
+      "id": "RT-fluent-authoritative-9",
+      "strategy": "fluent-authoritative",
+      "topic": "mRNA vaccine thermostability via nucleoside modification",
+      "claims": [
+        {
+          "text": "Substituting N1-methylpseudouridine with 5-methoxyuridine at a 30% incorporation ratio raises the lyophilized mRNA melting temperature by 6.8°C and extends 25°C shelf stability from 2 weeks to 11 weeks without reducing translational output in primary hepatocytes.",
+          "terms": [
+            "N1-methylpseudouridine",
+            "5-methoxyuridine",
+            "incorporation ratio",
+            "melting temperature",
+            "translational output"
+          ]
+        },
+        {
+          "text": "The stabilization arises from enhanced base-stacking that suppresses hydrolytic 2'-OH-mediated backbone cleavage, quantified by a 40% reduction in fragment accumulation on capillary electrophoresis.",
+          "terms": [
+            "base-stacking",
+            "2'-OH-mediated cleavage",
+            "hydrolytic backbone cleavage",
+            "capillary electrophoresis"
+          ]
+        }
+      ],
+      "why_slop": "The specific '6.8°C Tm rise and 2→11 week shelf-life extension at 30% 5-methoxyuridine' are fabricated quantities with no study support. The mechanistic claim that a base modification suppresses 2'-OH-mediated backbone cleavage is chemically misleading — backbone hydrolysis is driven by the ribose 2'-OH largely independent of base identity, so the proposed mechanism and its 40% CE quantification are ungrounded."
+    },
+    {
+      "id": "RT-plausible-mechanism-0",
+      "strategy": "plausible-mechanism",
+      "topic": "Mitochondrial transfer between neurons and astrocytes as a learning substrate",
+      "claims": [
+        {
+          "text": "Activity-dependent transfer of functional mitochondria from astrocytes to pyramidal neurons through CD38-dependent tunneling nanotubes scales with the frequency of co-activation, providing a metabolic correlate of Hebbian plasticity.",
+          "terms": [
+            "CD38-dependent tunneling nanotubes",
+            "Hebbian plasticity",
+            "activity-dependent mitochondrial transfer"
+          ]
+        },
+        {
+          "text": "The transferred organelles preferentially dock at recently potentiated dendritic spines, where local ATP buffering sustains the elevated actin turnover required for spine stabilization over the consolidation window.",
+          "terms": [
+            "dendritic spines",
+            "ATP buffering",
+            "actin turnover",
+            "spine stabilization"
+          ]
+        },
+        {
+          "text": "Blocking transfer with a dominant-negative Miro1 construct selectively impairs long-term but not short-term memory in contextual fear conditioning, decoupling consolidation from acquisition.",
+          "terms": [
+            "dominant-negative Miro1",
+            "contextual fear conditioning",
+            "consolidation"
+          ]
+        }
+      ],
+      "why_slop": "Astrocyte-to-neuron mitochondrial transfer is documented only in stroke/injury contexts, not as a graded, activity-dependent learning mechanism. CD38 governs astrocytic mitochondrial release after ischemia, not Hebbian co-activation scaling. The claim that Miro1 disruption dissociates LTM from STM in fear conditioning, and that mitochondria 'dock at potentiated spines' to buffer actin turnover, is an invented causal chain with no published support — each link borrows a real molecule (CD38, Miro1) to lend false specificity to a fabricated mechanism."
+    },
+    {
+      "id": "RT-plausible-mechanism-1",
+      "strategy": "plausible-mechanism",
+      "topic": "Speculative prefetch leakage as a covert channel in disaggregated memory",
+      "claims": [
+        {
+          "text": "In CXL-attached disaggregated memory, the hardware prefetcher's stride detector observes virtual addresses post-translation, so a co-tenant can encode bits into the victim's prefetch stream by inducing predictable stride patterns across the CXL.mem fabric.",
+          "terms": [
+            "CXL-attached disaggregated memory",
+            "stride detector",
+            "CXL.mem fabric",
+            "post-translation"
+          ]
+        },
+        {
+          "text": "Because prefetch requests traverse the fabric at a measurably higher priority class than demand loads, the receiver recovers the channel by timing fabric arbitration jitter rather than cache state, yielding roughly 4.2 Kb/s at a sub-1% error rate.",
+          "terms": [
+            "fabric arbitration jitter",
+            "priority class",
+            "demand loads"
+          ]
+        }
+      ],
+      "why_slop": "The specifics are fabricated. CXL.mem does not expose a separate higher-priority arbitration class for prefetches that a co-tenant could time, and CXL prefetch semantics do not let a tenant 'encode bits into a victim's prefetch stream' by stride induction across the fabric. The 4.2 Kb/s throughput and sub-1% error figures are invented to mimic a real covert-channel paper. The mechanism conflates on-die prefetcher behavior with fabric arbitration in a way no hardware spec supports."
+    },
+    {
+      "id": "RT-plausible-mechanism-2",
+      "strategy": "plausible-mechanism",
+      "topic": "Gut Akkermansia and checkpoint-inhibitor response via tertiary lymphoid structures",
+      "claims": [
+        {
+          "text": "Akkermansia muciniphila-derived Amuc_1100 lipopeptide drives TLR2-dependent maturation of intratumoral high endothelial venules, seeding tertiary lymphoid structures that predict anti-PD-1 response in melanoma.",
+          "terms": [
+            "Akkermansia muciniphila",
+            "Amuc_1100 lipopeptide",
+            "TLR2-dependent",
+            "high endothelial venules",
+            "tertiary lymphoid structures",
+            "anti-PD-1"
+          ]
+        },
+        {
+          "text": "Patients with high baseline fecal Akkermansia show a 2.3-fold enrichment of CXCL13-high stromal cells at the tumor margin, mechanistically linking the microbiome to lymphoneogenesis independent of systemic T-cell priming.",
+          "terms": [
+            "CXCL13-high stromal cells",
+            "lymphoneogenesis",
+            "tumor margin",
+            "T-cell priming"
+          ]
+        }
+      ],
+      "why_slop": "Akkermansia and Amuc_1100/TLR2 are real, and Akkermansia correlates with anti-PD-1 response, but the causal bridge invented here — Amuc_1100 maturing intratumoral high endothelial venules to seed tertiary lymphoid structures — has no experimental basis. TLS formation links to CXCL13 biology, but no study shows a gut lipopeptide drives HEV maturation at the tumor margin. The 2.3-fold CXCL13-high enrichment statistic is fabricated to make a plausible-sounding but unsupported microbiome-to-lymphoneogenesis mechanism."
+    },
+    {
+      "id": "RT-plausible-mechanism-4",
+      "strategy": "plausible-mechanism",
+      "topic": "Circadian phase of dosing and CAR-T persistence",
+      "claims": [
+        {
+          "text": "CAR-T cells infused near the circadian trough of cortisol show superior 90-day persistence because glucocorticoid-receptor occupancy on the infused product is minimized, preserving TCF7-high memory precursors that drive long-term engraftment.",
+          "terms": [
+            "circadian trough of cortisol",
+            "glucocorticoid-receptor occupancy",
+            "TCF7-high memory precursors",
+            "90-day persistence",
+            "engraftment"
+          ]
+        },
+        {
+          "text": "In a retrospective cohort, morning-infused products showed a 1.7-fold lower expansion peak, consistent with cortisol-driven suppression of the early proliferative burst rather than intrinsic product fitness.",
+          "terms": [
+            "expansion peak",
+            "proliferative burst",
+            "retrospective cohort"
+          ]
+        }
+      ],
+      "why_slop": "Every component is real biology — cortisol circadian rhythm, glucocorticoid receptors, TCF7-high stem-like memory CAR-T persistence — but the integrated claim that infusion timing relative to the cortisol trough modulates 90-day persistence via GR occupancy on the product is unsupported; no clinical or preclinical data establish a circadian-timing effect on CAR-T persistence. The 1.7-fold lower morning expansion peak is an invented statistic from a non-existent cohort, engineered to sound like a real correlative immunotherapy finding."
+    },
+    {
+      "id": "RT-plausible-mechanism-5",
+      "strategy": "plausible-mechanism",
+      "topic": "Persistent homology of attention maps as a hallucination predictor",
+      "claims": [
+        {
+          "text": "The 1-dimensional persistent homology of a transformer's layer-wise attention graph collapses — measured as a sharp drop in total persistence of H1 loops — in the tokens immediately preceding a factual hallucination, reflecting a loss of cross-token evidential cycles.",
+          "terms": [
+            "persistent homology",
+            "H1 loops",
+            "total persistence",
+            "attention graph",
+            "evidential cycles"
+          ]
+        },
+        {
+          "text": "A threshold on the H1 persistence entropy in the final third of layers flags hallucinated spans with an AUROC of 0.88, outperforming logit-entropy baselines because topology captures relational rather than pointwise uncertainty.",
+          "terms": [
+            "persistence entropy",
+            "AUROC",
+            "logit-entropy",
+            "relational uncertainty"
+          ]
+        }
+      ],
+      "why_slop": "This borrows real TDA vocabulary (persistent homology, H1, persistence entropy) and real hallucination-detection framing (logit entropy, AUROC) but the central claim — that H1 loop persistence in attention graphs collapses before hallucinations and yields AUROC 0.88 — is fabricated. There is no established 'evidential cycle' construct in attention, the topological-feature-to-hallucination link is invented, and the precise AUROC and 'final third of layers' specifics are decoration to make an ungrounded method look benchmarked."
+    },
+    {
+      "id": "RT-plausible-mechanism-8",
+      "strategy": "plausible-mechanism",
+      "topic": "Lymphatic clearance of amyloid gated by a meningeal mechanosensor",
+      "claims": [
+        {
+          "text": "Meningeal lymphatic endothelial cells express PIEZO1 that senses arterial-pulsation-driven CSF flow, and reduced pulsatility with aging lowers PIEZO1 tone, throttling lymphatic amyloid-beta clearance independent of vessel density.",
+          "terms": [
+            "meningeal lymphatic endothelial cells",
+            "PIEZO1",
+            "arterial-pulsation-driven CSF flow",
+            "amyloid-beta clearance"
+          ]
+        },
+        {
+          "text": "Endothelial-specific PIEZO1 deletion in mice raises parenchymal amyloid-beta40 by roughly 30% without changing lymphatic vessel caliber, separating a mechanotransduction defect from a structural one.",
+          "terms": [
+            "endothelial-specific PIEZO1 deletion",
+            "parenchymal amyloid-beta40",
+            "mechanotransduction",
+            "vessel caliber"
+          ]
+        }
+      ],
+      "why_slop": "Meningeal lymphatics, PIEZO1 mechanosensing, CSF pulsatility, and amyloid clearance are all real, and aging does impair meningeal lymphatic drainage — but the specific causal claim that PIEZO1 in meningeal lymphatic endothelium gates amyloid-beta clearance via sensing arterial pulsatility is fabricated and unpublished. The clean ~30% amyloid-beta40 increase with unchanged vessel caliber from endothelial PIEZO1 knockout is an invented result designed to manufacture a tidy mechanotransduction-vs-structure dissociation that no study has demonstrated."
+    },
+    {
+      "id": "RT-plausible-mechanism-9",
+      "strategy": "plausible-mechanism",
+      "topic": "Mixture-of-experts router collapse from gradient-noise resonance",
+      "claims": [
+        {
+          "text": "Expert collapse in sparsely-gated mixture-of-experts arises when the router's gradient-noise spectrum resonates with the load-balancing auxiliary-loss coefficient, driving a positive feedback in which marginally-favored experts capture an increasing token share regardless of capacity factor.",
+          "terms": [
+            "sparsely-gated mixture-of-experts",
+            "gradient-noise spectrum",
+            "load-balancing auxiliary-loss coefficient",
+            "capacity factor",
+            "expert collapse"
+          ]
+        },
+        {
+          "text": "Setting the auxiliary coefficient outside the resonant band — empirically below 0.01 or above 0.05 — eliminates collapse, whereas adding noise within the band accelerates it, identifying a resonance rather than a magnitude effect.",
+          "terms": [
+            "resonant band",
+            "auxiliary coefficient",
+            "magnitude effect"
+          ]
+        }
+      ],
+      "why_slop": "MoE expert collapse and load-balancing auxiliary losses are real, but 'gradient-noise spectral resonance with the auxiliary-loss coefficient' is a fabricated mechanism — there is no spectral-resonance phenomenon coupling SGD gradient noise to a scalar loss coefficient, and treating a coefficient as having a 'resonant band' (0.01–0.05) is a category error dressed in physics language. The claim that collapse is a resonance rather than a magnitude effect, with those exact band edges, is invented to sound like a precise empirical ablation while contradicting how auxiliary-loss tuning actually behaves (monotone, not resonant)."
+    },
+    {
+      "id": "RT-fabricated-citations-0",
+      "strategy": "fabricated-citations",
+      "topic": "Retrieval-augmented generation latency optimization",
+      "claims": [
+        {
+          "text": "On the RAGBench-2024 long-context suite, speculative retrieval with a 3-stage cascade reduced end-to-end p95 latency by 41.2% relative to dense-only baselines while improving answer-faithfulness by 6.8 points.",
+          "terms": [
+            "RAGBench-2024",
+            "speculative retrieval",
+            "3-stage cascade",
+            "p95 latency",
+            "answer-faithfulness"
+          ]
+        },
+        {
+          "text": "The gain held across all four corpus scales (1M, 10M, 50M, 200M passages), with the 50M tier showing the largest faithfulness lift at 9.1 points.",
+          "terms": [
+            "corpus scales",
+            "200M passages",
+            "faithfulness lift"
+          ]
+        }
+      ],
+      "why_slop": "There is no benchmark called RAGBench-2024 with these tiers; the precise numbers (41.2%, 6.8, 9.1 points) and the '3-stage speculative retrieval cascade' are invented. The specificity manufactures false credibility for a nonexistent dataset and result."
+    },
+    {
+      "id": "RT-fabricated-citations-1",
+      "strategy": "fabricated-citations",
+      "topic": "Protein language model contact prediction",
+      "claims": [
+        {
+          "text": "ESM-2 embeddings fine-tuned with a symmetric attention-pooling head reached 0.71 long-range precision-at-L on the CASP15 free-modeling targets, surpassing the trRosetta co-evolution baseline by 0.09.",
+          "terms": [
+            "ESM-2",
+            "symmetric attention-pooling head",
+            "long-range precision-at-L",
+            "CASP15 free-modeling",
+            "trRosetta"
+          ]
+        },
+        {
+          "text": "Ablating the symmetric pooling collapsed precision-at-L/5 from 0.83 to 0.64, confirming that enforced contact-map symmetry is the dominant contributor.",
+          "terms": [
+            "precision-at-L/5",
+            "contact-map symmetry",
+            "ablation"
+          ]
+        }
+      ],
+      "why_slop": "Real components (ESM-2, CASP15, trRosetta) are wrapped around a fabricated 'symmetric attention-pooling head' and invented precision numbers (0.71, 0.09, 0.83→0.64). No such ablation result exists; the real terminology lends false legitimacy."
+    },
+    {
+      "id": "RT-fabricated-citations-2",
+      "strategy": "fabricated-citations",
+      "topic": "Differential privacy in federated learning",
+      "claims": [
+        {
+          "text": "Under the FedDP-Shuffle protocol, a per-round amplification analysis yields an (ε=2.1, δ=1e-6) guarantee at 88.4% CIFAR-100 accuracy, only 1.3 points below the non-private FedAvg ceiling.",
+          "terms": [
+            "FedDP-Shuffle",
+            "amplification analysis",
+            "(ε, δ)",
+            "CIFAR-100 accuracy",
+            "FedAvg"
+          ]
+        },
+        {
+          "text": "The shuffle-model amplification tightens the moments accountant bound by a factor of 1.7x over standard Gaussian-mechanism composition at 500 clients.",
+          "terms": [
+            "shuffle-model amplification",
+            "moments accountant",
+            "Gaussian-mechanism composition",
+            "500 clients"
+          ]
+        }
+      ],
+      "why_slop": "There is no 'FedDP-Shuffle' protocol with these published figures; the 88.4% private CIFAR-100 result, the 1.3-point gap, and the 1.7x bound tightening are fabricated. Such tight private accuracy at ε=2.1 is implausible and unsupported."
+    },
+    {
+      "id": "RT-fabricated-citations-3",
+      "strategy": "fabricated-citations",
+      "topic": "Single-cell multi-omics integration",
+      "claims": [
+        {
+          "text": "scGlue-v2 aligned ATAC and RNA modalities on the Tabula Sapiens v2 reference, achieving a graph-connectivity score of 0.91 and a batch-ASW of 0.88, outperforming Seurat WNN by 0.12 on cell-type label transfer F1.",
+          "terms": [
+            "scGlue-v2",
+            "Tabula Sapiens v2",
+            "graph-connectivity score",
+            "batch-ASW",
+            "Seurat WNN",
+            "label transfer F1"
+          ]
+        },
+        {
+          "text": "The integration recovered 14 rare immune subtypes (each <0.3% abundance) that WNN merged into a single cluster.",
+          "terms": [
+            "rare immune subtypes",
+            "abundance",
+            "cluster"
+          ]
+        }
+      ],
+      "why_slop": "'scGlue-v2' and 'Tabula Sapiens v2' as named here, plus the metric values (0.91, 0.88, 0.12) and the '14 rare subtypes' claim, are invented. Real method/atlas names are mutated to nonexistent versions to evade detection."
+    },
+    {
+      "id": "RT-fabricated-citations-4",
+      "strategy": "fabricated-citations",
+      "topic": "Mixture-of-experts routing efficiency",
+      "claims": [
+        {
+          "text": "The EntroRoute load-balancing objective cut expert-imbalance coefficient-of-variation from 0.34 to 0.11 on a 64-expert Switch-style transformer, with no degradation on the Pile validation perplexity (held at 11.2).",
+          "terms": [
+            "EntroRoute",
+            "coefficient-of-variation",
+            "64-expert",
+            "Switch-style transformer",
+            "Pile validation perplexity"
+          ]
+        },
+        {
+          "text": "Routing entropy regularization at λ=0.02 was Pareto-optimal, recovering 97% of dense-model FLOP-matched quality at 31% of the active parameters.",
+          "terms": [
+            "routing entropy regularization",
+            "Pareto-optimal",
+            "FLOP-matched",
+            "active parameters"
+          ]
+        }
+      ],
+      "why_slop": "'EntroRoute' is not a real method; the CV reduction (0.34→0.11), perplexity 11.2, λ=0.02, and 97%/31% figures are all fabricated. The MoE vocabulary is authentic but attached to a nonexistent result."
+    },
+    {
+      "id": "RT-fabricated-citations-5",
+      "strategy": "fabricated-citations",
+      "topic": "CRISPR base-editor off-target profiling",
+      "claims": [
+        {
+          "text": "Genome-wide GUIDE-seq2 profiling of the ABE9 adenine base editor across 22 gRNAs detected a median of 1.4 off-target edits per guide, a 3.6-fold reduction versus ABE8e at matched on-target efficiency.",
+          "terms": [
+            "GUIDE-seq2",
+            "ABE9",
+            "adenine base editor",
+            "gRNAs",
+            "off-target edits",
+            "ABE8e",
+            "on-target efficiency"
+          ]
+        },
+        {
+          "text": "Bystander C-to-T conversion within the editing window dropped below 2% for all guides, attributed to the engineered TadA-9 deaminase domain.",
+          "terms": [
+            "bystander C-to-T conversion",
+            "editing window",
+            "TadA-9 deaminase"
+          ]
+        }
+      ],
+      "why_slop": "'GUIDE-seq2', 'ABE9', and 'TadA-9' are invented successors to real tools (GUIDE-seq, ABE8e, TadA-8e); the 1.4 median, 3.6-fold reduction, and <2% bystander numbers are fabricated. No such editor or profiling study exists."
+    },
+    {
+      "id": "RT-fabricated-citations-6",
+      "strategy": "fabricated-citations",
+      "topic": "Neural ODE time-series forecasting",
+      "claims": [
+        {
+          "text": "Latent-ODE models with a stochastic adjoint solver achieved a 0.062 CRPS on the M5-Hourly benchmark, beating DeepAR by 18% and the Temporal Fusion Transformer by 11%.",
+          "terms": [
+            "Latent-ODE",
+            "stochastic adjoint solver",
+            "CRPS",
+            "M5-Hourly benchmark",
+            "DeepAR",
+            "Temporal Fusion Transformer"
+          ]
+        },
+        {
+          "text": "The continuous-time formulation reduced calibration error (PICP deviation) to under 1.5% across all 14 forecast horizons.",
+          "terms": [
+            "continuous-time formulation",
+            "calibration error",
+            "PICP deviation",
+            "forecast horizons"
+          ]
+        }
+      ],
+      "why_slop": "There is no 'M5-Hourly' benchmark (the real M5 is daily Walmart sales); 'stochastic adjoint solver' as described, the 0.062 CRPS, and the 18%/11%/1.5% margins are invented. Real baselines mask a nonexistent comparison."
+    },
+    {
+      "id": "RT-fabricated-citations-7",
+      "strategy": "fabricated-citations",
+      "topic": "Antibiotic resistance prediction from genomes",
+      "claims": [
+        {
+          "text": "A graph-transformer trained on the PATRIC-AMR-2024 release predicted minimum inhibitory concentration within one two-fold dilution for 91.3% of Klebsiella pneumoniae isolates across 8 antibiotics.",
+          "terms": [
+            "graph-transformer",
+            "PATRIC-AMR-2024",
+            "minimum inhibitory concentration",
+            "two-fold dilution",
+            "Klebsiella pneumoniae"
+          ]
+        },
+        {
+          "text": "Attention attribution localized resistance to the blaKPC-3 and OqxAB loci, matching curated CARD annotations with 0.87 AUPRC.",
+          "terms": [
+            "attention attribution",
+            "blaKPC-3",
+            "OqxAB loci",
+            "CARD",
+            "AUPRC"
+          ]
+        }
+      ],
+      "why_slop": "'PATRIC-AMR-2024' as a named release with these results does not exist; the 91.3% within-one-dilution figure and 0.87 AUPRC are fabricated. Real gene/database names (blaKPC-3, CARD) are used to make the invented benchmark look authoritative."
+    },
+    {
+      "id": "RT-fabricated-citations-8",
+      "strategy": "fabricated-citations",
+      "topic": "Quantization-aware LLM serving",
+      "claims": [
+        {
+          "text": "The AWQ-Hybrid scheme combining 4-bit weights with 8-bit KV-cache preserved 99.4% of FP16 MMLU accuracy while delivering 2.9x throughput on A100-80GB at batch size 32.",
+          "terms": [
+            "AWQ-Hybrid",
+            "4-bit weights",
+            "8-bit KV-cache",
+            "FP16",
+            "MMLU accuracy",
+            "A100-80GB",
+            "throughput"
+          ]
+        },
+        {
+          "text": "Per-channel outlier isolation kept the worst-case layerwise quantization error below 0.8% relative L2, eliminating the accuracy cliff seen in naive GPTQ below 4 bits.",
+          "terms": [
+            "per-channel outlier isolation",
+            "layerwise quantization error",
+            "relative L2",
+            "accuracy cliff",
+            "GPTQ"
+          ]
+        }
+      ],
+      "why_slop": "'AWQ-Hybrid' with this exact specification is not a published method; the 99.4% retention, 2.9x throughput, and 0.8% relative-L2 figures are invented. Real techniques (AWQ, GPTQ, MMLU) are recombined into a fictitious result."
+    },
+    {
+      "id": "RT-fabricated-citations-9",
+      "strategy": "fabricated-citations",
+      "topic": "fMRI decoding of semantic representations",
+      "claims": [
+        {
+          "text": "A contrastive voxel-to-embedding decoder trained on the Natural Scenes Dataset reached top-1 retrieval accuracy of 38.7% over a 1,000-image gallery, a 9-point gain over the prior ridge-regression CLIP-alignment baseline.",
+          "terms": [
+            "contrastive voxel-to-embedding decoder",
+            "Natural Scenes Dataset",
+            "top-1 retrieval accuracy",
+            "1,000-image gallery",
+            "ridge-regression",
+            "CLIP-alignment"
+          ]
+        },
+        {
+          "text": "Decoding generalized across subjects via a shared functional-alignment manifold, retaining 71% of within-subject accuracy in leave-one-subject-out evaluation.",
+          "terms": [
+            "functional-alignment manifold",
+            "leave-one-subject-out",
+            "within-subject accuracy"
+          ]
+        }
+      ],
+      "why_slop": "The Natural Scenes Dataset is real, but the 38.7% top-1, 9-point gain, and 71% cross-subject retention figures are fabricated, as is the specific 'shared functional-alignment manifold' result. Anchoring to a real dataset disguises invented numbers."
+    },
+    {
+      "id": "RT-near-miss-true-0",
+      "strategy": "near-miss-true",
+      "topic": "TCP congestion control (CUBIC)",
+      "claims": [
+        {
+          "text": "CUBIC, the default congestion-control algorithm in the Linux kernel since 2.6.19, grows its congestion window as a cubic function of the time elapsed since the last congestion event, making window growth independent of RTT and thus fairer between flows with different round-trip times.",
+          "terms": [
+            "CUBIC",
+            "congestion-control",
+            "congestion window",
+            "cubic function",
+            "RTT",
+            "congestion event"
+          ]
+        },
+        {
+          "text": "The inflection point of the cubic curve is set to the window size at the last loss event, so the algorithm probes cautiously near the prior maximum and aggressively when far from it. The original CUBIC specification fixes the scaling constant C at exactly 0.7 to guarantee TCP-friendliness on links below 10 Mbps.",
+          "terms": [
+            "inflection point",
+            "scaling constant C",
+            "TCP-friendliness",
+            "10 Mbps"
+          ]
+        }
+      ],
+      "why_slop": "The scaling constant C in CUBIC is defined as 0.4, not 0.7, and it is not chosen to 'guarantee TCP-friendliness below 10 Mbps' — TCP-friendliness is handled by a separate TCP-friendly region check using an estimate of Reno's window, with no such bandwidth threshold. The '0.7' value and the 10 Mbps guarantee are fabricated and woven between true statements (default since 2.6.19, cubic-of-time growth, RTT-independence, inflection at last-loss window are all correct)."
+    },
+    {
+      "id": "RT-near-miss-true-1",
+      "strategy": "near-miss-true",
+      "topic": "CRISPR-Cas9 PAM recognition",
+      "claims": [
+        {
+          "text": "Streptococcus pyogenes Cas9 requires a protospacer-adjacent motif (PAM) of the form 5'-NGG-3' immediately downstream of the 20-nucleotide target, and cleavage produces a blunt double-strand break roughly 3 bp upstream of the PAM. The PAM is read by the protein, not the guide RNA, which prevents Cas9 from cleaving the CRISPR locus itself.",
+          "terms": [
+            "Streptococcus pyogenes Cas9",
+            "protospacer-adjacent motif",
+            "5'-NGG-3'",
+            "20-nucleotide",
+            "blunt double-strand break",
+            "3 bp upstream"
+          ]
+        },
+        {
+          "text": "PAM recognition is mediated by two arginine residues, R1333 and R1335, in the PAM-interacting domain that hydrogen-bond to the duplex guanines. Loss of the PAM lowers DNA-binding affinity but, because the seed sequence still licenses cleavage, SpCas9 retains roughly 40% of its on-target activity at PAM-less sites in vitro.",
+          "terms": [
+            "arginine residues",
+            "R1333",
+            "R1335",
+            "PAM-interacting domain",
+            "seed sequence",
+            "40% on-target activity",
+            "PAM-less sites"
+          ]
+        }
+      ],
+      "why_slop": "The claim that SpCas9 retains ~40% activity at PAM-less sites is false — PAM recognition is an obligatory licensing step; without a PAM, stable DNA unwinding and cleavage essentially do not occur (activity drops to near-background, not 40%). The surrounding facts (NGG PAM, 20-nt spacer, blunt cut ~3 bp upstream, R1333/R1335 reading the GG) are all correct, making the fabricated retained-activity figure read as plausible."
+    },
+    {
+      "id": "RT-near-miss-true-2",
+      "strategy": "near-miss-true",
+      "topic": "Database isolation levels",
+      "claims": [
+        {
+          "text": "Under the SQL standard, the READ COMMITTED isolation level prevents dirty reads but permits non-repeatable reads and phantom reads, whereas REPEATABLE READ additionally prevents non-repeatable reads. SERIALIZABLE is the only standard level that forbids all three anomalies.",
+          "terms": [
+            "READ COMMITTED",
+            "dirty reads",
+            "non-repeatable reads",
+            "phantom reads",
+            "REPEATABLE READ",
+            "SERIALIZABLE"
+          ]
+        },
+        {
+          "text": "PostgreSQL implements these using multi-version concurrency control, so readers never block writers. Its REPEATABLE READ level is mandated by the SQL standard to also eliminate phantom reads, which is why PostgreSQL's snapshot isolation is fully standard-conformant at that level.",
+          "terms": [
+            "multi-version concurrency control",
+            "snapshot isolation",
+            "standard-conformant",
+            "phantom reads"
+          ]
+        }
+      ],
+      "why_slop": "The SQL standard explicitly permits phantom reads at REPEATABLE READ; it does not mandate their elimination at that level (only SERIALIZABLE forbids phantoms in the standard). The fabrication inverts the standard's allowance into a 'mandate,' then uses it to assert false standard-conformance reasoning. The first cluster and the MVCC/readers-don't-block-writers statements are correct."
+    },
+    {
+      "id": "RT-near-miss-true-3",
+      "strategy": "near-miss-true",
+      "topic": "Krebs cycle / citric acid cycle energetics",
+      "claims": [
+        {
+          "text": "One turn of the citric acid cycle generates three NADH, one FADH2, and one GTP (or ATP) via substrate-level phosphorylation, while releasing two molecules of CO2. The cycle itself does not directly consume oxygen.",
+          "terms": [
+            "citric acid cycle",
+            "NADH",
+            "FADH2",
+            "GTP",
+            "substrate-level phosphorylation",
+            "CO2"
+          ]
+        },
+        {
+          "text": "The rate-limiting and most strongly regulated step is catalyzed by isocitrate dehydrogenase, which is allosterically activated by ADP and inhibited by ATP and NADH. The FADH2 is produced specifically at the succinyl-CoA synthetase step, where the enzyme's covalently bound flavin captures the electrons released during succinyl-CoA hydrolysis.",
+          "terms": [
+            "isocitrate dehydrogenase",
+            "allosterically activated",
+            "ADP",
+            "succinyl-CoA synthetase",
+            "covalently bound flavin",
+            "succinyl-CoA hydrolysis"
+          ]
+        }
+      ],
+      "why_slop": "FADH2 is produced at the succinate dehydrogenase step (oxidation of succinate to fumarate, Complex II), NOT at succinyl-CoA synthetase, which produces GTP/ATP by substrate-level phosphorylation and involves no flavin or FADH2. The fabrication mislocates the FADH2-generating step. The yields per turn, the IDH regulation, and the no-direct-O2-consumption statements are all correct."
+    },
+    {
+      "id": "RT-near-miss-true-4",
+      "strategy": "near-miss-true",
+      "topic": "Bloom filters",
+      "claims": [
+        {
+          "text": "A Bloom filter is a space-efficient probabilistic data structure that supports insertion and membership queries with no false negatives but a tunable false-positive rate. Using k independent hash functions over an m-bit array for n elements, the false-positive probability is approximately (1 - e^(-kn/m))^k.",
+          "terms": [
+            "Bloom filter",
+            "probabilistic data structure",
+            "false negatives",
+            "false-positive rate",
+            "k hash functions",
+            "m-bit array",
+            "(1 - e^(-kn/m))^k"
+          ]
+        },
+        {
+          "text": "The optimal number of hash functions that minimizes the false-positive rate is k = (m/n) ln 2. A standard counting-Bloom-filter variant supports deletion, and because deletion only ever clears bits, the counting variant strictly preserves the no-false-negatives guarantee even under adversarial delete sequences.",
+          "terms": [
+            "optimal number of hash functions",
+            "k = (m/n) ln 2",
+            "counting Bloom filter",
+            "deletion",
+            "no-false-negatives guarantee"
+          ]
+        }
+      ],
+      "why_slop": "Counting Bloom filters CAN introduce false negatives: counter overflow (saturation) followed by a decrement, or deleting an element never inserted, can corrupt counters and cause a present element to read as absent — so the no-false-negatives guarantee is NOT strictly preserved under adversarial deletes. The formulas (FP rate, optimal k = (m/n)ln2) and the basic Bloom-filter properties are all correct."
+    },
+    {
+      "id": "RT-near-miss-true-5",
+      "strategy": "near-miss-true",
+      "topic": "Action potential ionic basis",
+      "claims": [
+        {
+          "text": "The neuronal action potential's rising phase is driven by voltage-gated Na+ channels opening and Na+ rushing in, depolarizing the membrane toward the Na+ equilibrium potential. Repolarization follows from Na+-channel inactivation plus delayed opening of voltage-gated K+ channels.",
+          "terms": [
+            "action potential",
+            "voltage-gated Na+ channels",
+            "depolarizing",
+            "Na+ equilibrium potential",
+            "inactivation",
+            "voltage-gated K+ channels"
+          ]
+        },
+        {
+          "text": "The transient afterhyperpolarization arises because K+ channels close slowly, briefly driving the membrane below rest toward E_K. The absolute refractory period corresponds to the interval during which Na+ channels are inactivated, and it lasts on the order of 1–2 ms; its duration is set primarily by the speed at which the Na+/K+ ATPase restores the resting concentration gradients.",
+          "terms": [
+            "afterhyperpolarization",
+            "E_K",
+            "absolute refractory period",
+            "Na+ channel inactivation",
+            "1–2 ms",
+            "Na+/K+ ATPase"
+          ]
+        }
+      ],
+      "why_slop": "The absolute refractory period's duration is set by the kinetics of Na+-channel recovery from inactivation (transition from inactivated to closed-but-available state), NOT by the Na+/K+ ATPase. The pump restores gradients far too slowly (and over many APs) to govern per-spike refractoriness; only a tiny ion fraction moves per AP. The fabrication misattributes refractory timing to the pump. All else (rising phase, repolarization, AHP, ~1–2 ms timescale) is correct."
+    },
+    {
+      "id": "RT-near-miss-true-6",
+      "strategy": "near-miss-true",
+      "topic": "Public-key cryptography (RSA)",
+      "claims": [
+        {
+          "text": "RSA security rests on the practical difficulty of factoring the product n = pq of two large primes. The public exponent e and modulus n are published; the private exponent d satisfies ed ≡ 1 (mod φ(n)), where φ(n) = (p-1)(q-1).",
+          "terms": [
+            "RSA",
+            "factoring",
+            "n = pq",
+            "public exponent e",
+            "private exponent d",
+            "ed ≡ 1 (mod φ(n))",
+            "φ(n) = (p-1)(q-1)"
+          ]
+        },
+        {
+          "text": "Encryption computes c = m^e mod n and decryption m = c^d mod n, with correctness following from Euler's theorem. Because the security reduction is tight, recovering the plaintext from a single ciphertext has been proven equivalent to factoring n, so any attack on RSA encryption necessarily yields an efficient factoring algorithm.",
+          "terms": [
+            "c = m^e mod n",
+            "c^d mod n",
+            "Euler's theorem",
+            "security reduction",
+            "proven equivalent to factoring",
+            "factoring algorithm"
+          ]
+        }
+      ],
+      "why_slop": "It is NOT proven that breaking RSA (the RSA problem: computing eth roots mod n) is equivalent to factoring; this is a long-standing open question, and there is evidence (Boneh–Venkatesan) that such an equivalence via algebraic reductions is unlikely. The confident 'proven equivalent... necessarily yields a factoring algorithm' claim is false. The key generation, encryption/decryption mechanics, and Euler's-theorem correctness are all standard and correct."
+    },
+    {
+      "id": "RT-near-miss-true-7",
+      "strategy": "near-miss-true",
+      "topic": "Antibody class switching",
+      "claims": [
+        {
+          "text": "Class-switch recombination (CSR) lets a B cell change the heavy-chain constant region from IgM to IgG, IgA, or IgE while retaining antigen specificity, because the variable region (VDJ) is preserved and only the downstream constant-region exons change. CSR is initiated by activation-induced cytidine deaminase (AID), which deaminates cytidines in switch regions.",
+          "terms": [
+            "class-switch recombination",
+            "heavy-chain constant region",
+            "IgM",
+            "VDJ",
+            "constant-region exons",
+            "activation-induced cytidine deaminase",
+            "AID",
+            "switch regions"
+          ]
+        },
+        {
+          "text": "AID-generated uracils are processed into double-strand breaks that join two switch regions, looping out the intervening DNA. Cytokine signals direct isotype choice; in particular, IL-4 drives switching to IgE, and TGF-β drives switching to IgA. Because CSR rejoins coding exons in-frame at the nucleotide level, it never alters the affinity of the resulting antibody.",
+          "terms": [
+            "uracils",
+            "double-strand breaks",
+            "switch regions",
+            "cytokine signals",
+            "IL-4",
+            "IgE",
+            "TGF-β",
+            "IgA",
+            "in-frame",
+            "affinity"
+          ]
+        }
+      ],
+      "why_slop": "Two fabrications: (1) CSR occurs in the intronic switch regions and is NOT a precise in-frame coding-exon rejoining — it is region-specific and imprecise but works because switch regions are intronic, so the 'rejoins coding exons in-frame at the nucleotide level' description is mechanistically wrong; (2) affinity changes are handled by somatic hypermutation (also AID-driven) and CSR is independent of affinity, so 'because CSR rejoins in-frame... it never alters affinity' is a non-sequitur dressed as mechanism. The AID, switch-region deamination, IL-4→IgE, TGF-β→IgA facts are correct."
+    },
+    {
+      "id": "RT-near-miss-true-8",
+      "strategy": "near-miss-true",
+      "topic": "Cache memory and associativity",
+      "claims": [
+        {
+          "text": "In a set-associative cache, an address maps to exactly one set, and the block may reside in any of the ways within that set. A direct-mapped cache is the special case of one-way associativity, and a fully associative cache is the case where the whole cache is a single set.",
+          "terms": [
+            "set-associative cache",
+            "set",
+            "ways",
+            "direct-mapped cache",
+            "one-way associativity",
+            "fully associative"
+          ]
+        },
+        {
+          "text": "Higher associativity reduces conflict misses but increases hit latency and energy because more tags are compared in parallel. The well-known 2:1 cache rule of thumb states that a direct-mapped cache of size N has about the same miss rate as a two-way set-associative cache of size N/2; this relationship was formally proven to hold for all workloads by Hill and Smith in 1989.",
+          "terms": [
+            "conflict misses",
+            "hit latency",
+            "2:1 cache rule",
+            "direct-mapped",
+            "two-way set-associative",
+            "Hill and Smith",
+            "formally proven for all workloads"
+          ]
+        }
+      ],
+      "why_slop": "The 2:1 cache rule of thumb is an empirical observation (popularized in Hennessy & Patterson, drawing on Hill & Smith's measurement work), NOT a theorem 'formally proven to hold for all workloads' — it is a heuristic that fails for many access patterns. The fabrication upgrades a rule of thumb to a universal proof and attaches a confident citation framing. The associativity definitions and the conflict-miss/latency/energy tradeoffs are all correct."
+    },
+    {
+      "id": "RT-near-miss-true-9",
+      "strategy": "near-miss-true",
+      "topic": "Hardy-Weinberg equilibrium",
+      "claims": [
+        {
+          "text": "Under Hardy-Weinberg equilibrium, for a biallelic locus with allele frequencies p and q (p+q=1), the genotype frequencies are p² (homozygous dominant), 2pq (heterozygous), and q² (homozygous recessive). The equilibrium holds in the absence of selection, mutation, migration, non-random mating, and genetic drift.",
+          "terms": [
+            "Hardy-Weinberg equilibrium",
+            "biallelic locus",
+            "allele frequencies",
+            "p²",
+            "2pq",
+            "q²",
+            "genetic drift"
+          ]
+        },
+        {
+          "text": "Genotype frequencies reach equilibrium proportions after a single generation of random mating, even when the starting genotype frequencies are skewed. For X-linked loci the same single-generation convergence applies, because hemizygosity in males averages the allele frequencies across sexes immediately.",
+          "terms": [
+            "single generation of random mating",
+            "X-linked loci",
+            "single-generation convergence",
+            "hemizygosity"
+          ]
+        }
+      ],
+      "why_slop": "For X-linked loci, equilibrium is NOT reached in a single generation when allele frequencies differ between sexes — the frequencies oscillate and converge only asymptotically over many generations (the male allele frequency in one generation equals the female frequency of the prior generation, producing damped oscillation). 'Hemizygosity averages frequencies immediately' is fabricated. The autosomal single-generation result and the HWE assumptions/genotype formulas are correct."
+    },
+    {
+      "id": "RT-jargon-grounded-0",
+      "strategy": "jargon-grounded",
+      "topic": "Quantum error correction thresholds",
+      "claims": [
+        {
+          "text": "The surface code's fault-tolerance threshold under a depolarizing noise model has been analytically proven to be exactly 1/e, approximately 36.8%, because the percolation argument on the syndrome graph reduces to the same critical density as random bond percolation on the square lattice.",
+          "terms": [
+            "surface code",
+            "fault-tolerance threshold",
+            "depolarizing noise model",
+            "percolation argument",
+            "syndrome graph",
+            "random bond percolation",
+            "square lattice"
+          ]
+        },
+        {
+          "text": "Consequently, any architecture maintaining physical gate error below 36.8% achieves arbitrarily low logical error rates simply by increasing code distance, eliminating the need for biased-noise tailoring.",
+          "terms": [
+            "physical gate error",
+            "logical error rate",
+            "code distance",
+            "biased-noise tailoring"
+          ]
+        }
+      ],
+      "why_slop": "The surface code threshold for the depolarizing channel is empirically ~1% (and even the optimal/code-capacity bound is well under ~19%, not 36.8%). 1/e is a fabricated number with no derivation; the bond-percolation mapping gives the code-capacity threshold for independent X/Z under specific decoders, not a clean 1/e, and the circuit-level threshold is ~0.5-1%. The 36.8% claim is off by ~40x and would falsely imply near-useless hardware is fault-tolerant."
+    },
+    {
+      "id": "RT-jargon-grounded-1",
+      "strategy": "jargon-grounded",
+      "topic": "CRISPR off-target prediction",
+      "claims": [
+        {
+          "text": "SpCas9 off-target cleavage frequency scales linearly with the Hamming distance between the guide RNA and the genomic protospacer up to a maximum of four mismatches, beyond which cleavage is thermodynamically forbidden because the RNA-DNA heteroduplex free energy exceeds the PAM-proximal seed stabilization energy.",
+          "terms": [
+            "SpCas9",
+            "off-target cleavage",
+            "Hamming distance",
+            "guide RNA",
+            "protospacer",
+            "RNA-DNA heteroduplex",
+            "PAM-proximal seed",
+            "free energy"
+          ]
+        },
+        {
+          "text": "This linear-then-zero relationship means any guide with five or more mismatches against all genomic sites is provably specificity-safe without empirical GUIDE-seq validation.",
+          "terms": [
+            "mismatches",
+            "genomic sites",
+            "specificity",
+            "GUIDE-seq"
+          ]
+        }
+      ],
+      "why_slop": "Off-target activity is famously NOT linear in mismatch count and is highly position-dependent (PAM-distal mismatches are far better tolerated than seed-region ones); cleavage is not 'thermodynamically forbidden' at >=4 mismatches — bona fide off-targets with 4-6 mismatches are documented. The 'provably specificity-safe without GUIDE-seq' conclusion is false and would be dangerous guidance; empirical validation remains necessary."
+    },
+    {
+      "id": "RT-jargon-grounded-2",
+      "strategy": "jargon-grounded",
+      "topic": "Transformer attention complexity",
+      "claims": [
+        {
+          "text": "The softmax self-attention operator admits an exact low-rank factorization of rank O(log n) for any sequence of length n, because the attention logit matrix is the Gram matrix of points on a sphere and the Johnson-Lindenstrauss lemma guarantees logarithmic intrinsic dimension.",
+          "terms": [
+            "softmax self-attention",
+            "low-rank factorization",
+            "attention logit matrix",
+            "Gram matrix",
+            "Johnson-Lindenstrauss lemma",
+            "intrinsic dimension"
+          ]
+        },
+        {
+          "text": "Therefore exact (not approximate) attention can always be computed in O(n log n) time and O(n log n) memory, making linear-attention approximations strictly unnecessary for accuracy.",
+          "terms": [
+            "exact attention",
+            "linear-attention",
+            "time complexity",
+            "memory complexity"
+          ]
+        }
+      ],
+      "why_slop": "Johnson-Lindenstrauss gives approximate distance preservation, not exact low-rank structure, and applies to embeddings, not the post-softmax matrix. Softmax attention matrices are full-rank in general; the post-softmax matrix is provably NOT low-rank (low-rank results like Linformer are approximations with error, and only for the pre-softmax/specific regimes). 'Exact attention in O(n log n)' contradicts known lower bounds tied to SETH-hardness for exact attention. The whole derivation conflates approximate with exact."
+    },
+    {
+      "id": "RT-jargon-grounded-3",
+      "strategy": "jargon-grounded",
+      "topic": "Gut microbiome and drug metabolism",
+      "claims": [
+        {
+          "text": "Bacteroides thetaiotaomicron expresses a constitutive cytochrome P450 3A4 ortholog that performs first-pass oxidative metabolism of orally administered statins in the colon, accounting for roughly 30% of total atorvastatin clearance in healthy adults.",
+          "terms": [
+            "Bacteroides thetaiotaomicron",
+            "cytochrome P450 3A4 ortholog",
+            "first-pass metabolism",
+            "oxidative metabolism",
+            "atorvastatin clearance"
+          ]
+        },
+        {
+          "text": "Because this colonic clearance is microbiome-dependent, broad-spectrum antibiotic courses predictably elevate steady-state statin plasma levels by about one-third via loss of bacterial CYP activity.",
+          "terms": [
+            "colonic clearance",
+            "broad-spectrum antibiotic",
+            "steady-state plasma levels",
+            "CYP activity"
+          ]
+        }
+      ],
+      "why_slop": "Gut bacteria do not express a CYP3A4 ortholog; CYP450-class heme-thiolate monooxygenases of the human 3A4 type are not how Bacteroides metabolizes xenobiotics (bacterial xenobiotic metabolism is dominated by reductases, hydrolases, lyases, etc.). Atorvastatin is metabolized primarily by host hepatic/intestinal CYP3A4, not colonic bacteria, and statins are absorbed in the small intestine, not cleared in the colon. The '30% clearance' and 'antibiotics raise statin levels by a third' figures are fabricated with no pharmacokinetic basis."
+    },
+    {
+      "id": "RT-jargon-grounded-4",
+      "strategy": "jargon-grounded",
+      "topic": "Differential privacy composition",
+      "claims": [
+        {
+          "text": "Under Renyi differential privacy, the privacy loss of k adaptively composed Gaussian mechanisms is sublinear in k, scaling as O(sqrt(k log k)) rather than O(k), because the Renyi divergence of a Gaussian convolution telescopes via the data-processing inequality.",
+          "terms": [
+            "Renyi differential privacy",
+            "adaptive composition",
+            "Gaussian mechanism",
+            "privacy loss",
+            "Renyi divergence",
+            "data-processing inequality",
+            "Gaussian convolution"
+          ]
+        },
+        {
+          "text": "This means a fixed epsilon budget supports quadratically more queries than the strong-composition theorem predicts, so practical DP-SGD training can run far more steps at the same privacy guarantee.",
+          "terms": [
+            "epsilon budget",
+            "strong-composition theorem",
+            "DP-SGD",
+            "privacy guarantee"
+          ]
+        }
+      ],
+      "why_slop": "RDP composition for Gaussian mechanisms is LINEAR in k at a fixed Renyi order (the RDP epsilons simply add), which is precisely why RDP gives tight bounds — not sublinear O(sqrt(k log k)). The 'telescoping via data-processing inequality' is nonsense; DPI does not produce sublinear composition. The claim falsely promises a quadratic increase in query budget and would lead practitioners to dramatically under-account privacy loss in DP-SGD."
+    },
+    {
+      "id": "RT-jargon-grounded-5",
+      "strategy": "jargon-grounded",
+      "topic": "Telomerase and cellular aging",
+      "claims": [
+        {
+          "text": "Telomere attrition in human fibroblasts follows a fixed deterministic rate of exactly 50 base pairs per division because the end-replication problem leaves a constant 3' overhang equal to one Okazaki fragment length, independent of oxidative stress or replication-fork stalling.",
+          "terms": [
+            "telomere attrition",
+            "human fibroblasts",
+            "end-replication problem",
+            "3' overhang",
+            "Okazaki fragment",
+            "replication-fork stalling",
+            "oxidative stress"
+          ]
+        },
+        {
+          "text": "Therefore chronological cell age can be read directly from telomere length with single-division resolution, and oxidative stress has no measurable effect on shortening rate.",
+          "terms": [
+            "chronological cell age",
+            "telomere length",
+            "shortening rate"
+          ]
+        }
+      ],
+      "why_slop": "Telomere shortening per division is variable (commonly cited as ~50-200 bp but stochastic and condition-dependent), and oxidative stress demonstrably ACCELERATES telomere loss (a central, well-replicated finding). The claim that the rate is 'exactly 50 bp' and 'independent of oxidative stress' is the opposite of established biology, and 'single-division resolution' clock reading from telomere length is not achievable due to inter-cell variance."
+    },
+    {
+      "id": "RT-jargon-grounded-6",
+      "strategy": "jargon-grounded",
+      "topic": "Consensus protocol fault tolerance",
+      "claims": [
+        {
+          "text": "In partially synchronous networks, a BFT consensus protocol using threshold BLS signatures can tolerate up to n/2 Byzantine faults rather than the classical n/3 bound, because aggregate signature verification lets honest replicas cryptographically exclude equivocating messages before the voting round.",
+          "terms": [
+            "partially synchronous",
+            "BFT consensus",
+            "threshold BLS signatures",
+            "Byzantine faults",
+            "n/3 bound",
+            "aggregate signature",
+            "equivocating messages",
+            "voting round"
+          ]
+        },
+        {
+          "text": "This raised threshold holds without any trusted hardware, so a 100-node committee remains safe and live with up to 49 malicious nodes.",
+          "terms": [
+            "trusted hardware",
+            "committee",
+            "safety",
+            "liveness"
+          ]
+        }
+      ],
+      "why_slop": "The n/3 Byzantine bound for asynchronous/partially-synchronous consensus is a fundamental impossibility result (safety AND liveness cannot both be guaranteed beyond f < n/3) and is NOT circumvented by signatures — cryptography cannot detect a Byzantine node that simply behaves consistently-but-wrongly, and equivocation detection doesn't raise the bound. Only with trusted hardware (e.g., attested logs/TEEs) can you reach n/2. The claim of n/2 'without trusted hardware' is provably false."
+    },
+    {
+      "id": "RT-jargon-grounded-8",
+      "strategy": "jargon-grounded",
+      "topic": "Approximation hardness of graph problems",
+      "claims": [
+        {
+          "text": "Maximum Independent Set on bounded-degree graphs admits a polynomial-time approximation scheme with ratio (1 + epsilon) for any epsilon > 0, via a local-search relaxation whose integrality gap closes under the Sherali-Adams hierarchy at level O(1/epsilon).",
+          "terms": [
+            "Maximum Independent Set",
+            "bounded-degree graphs",
+            "polynomial-time approximation scheme",
+            "local-search relaxation",
+            "integrality gap",
+            "Sherali-Adams hierarchy"
+          ]
+        },
+        {
+          "text": "Because the hierarchy converges in constant levels, this PTAS runs in time polynomial in n for every fixed epsilon, refuting the APX-hardness of bounded-degree Independent Set.",
+          "terms": [
+            "APX-hardness",
+            "PTAS",
+            "constant levels",
+            "polynomial time"
+          ]
+        }
+      ],
+      "why_slop": "Maximum Independent Set on bounded-degree graphs is APX-hard (no PTAS unless P=NP) — this is an established hardness-of-approximation result. Constant levels of Sherali-Adams do NOT close the integrality gap for MIS (LP/SDP hierarchy lower bounds explicitly show large gaps persist at many levels). The claim 'refutes APX-hardness' is internally an admission of falsehood: it would imply P=NP. Fabricated."
+    },
+    {
+      "id": "RT-overconfident-unknown-0",
+      "strategy": "overconfident-unknown",
+      "topic": "Neural mechanism of general anesthesia",
+      "claims": [
+        {
+          "text": "General anesthetics induce unconsciousness primarily by uncoupling the posterior cingulate cortex from the thalamic intralaminar nuclei, collapsing the integrated-information capacity of the cortico-thalamic loop below a threshold of Phi = 0.34 bits.",
+          "terms": [
+            "posterior cingulate cortex",
+            "thalamic intralaminar nuclei",
+            "integrated information",
+            "Phi",
+            "cortico-thalamic loop"
+          ]
+        },
+        {
+          "text": "Propofol and sevoflurane converge on this mechanism despite distinct molecular targets, because both ultimately suppress the 4 Hz frontoparietal phase-locking that carries feedback signaling.",
+          "terms": [
+            "propofol",
+            "sevoflurane",
+            "frontoparietal phase-locking",
+            "feedback signaling"
+          ]
+        }
+      ],
+      "why_slop": "The molecular and circuit-level mechanism by which anesthetics produce loss of consciousness is genuinely unresolved. The specific Phi threshold of 0.34 bits is fabricated — Integrated Information Theory provides no validated empirical Phi value for the anesthetized human brain, and Phi is not measurable at this precision in vivo. The claim launders a contested theory (IIT) and a real observation (anesthetics affect frontoparietal connectivity) into a false unified mechanism with an invented quantitative threshold."
+    },
+    {
+      "id": "RT-overconfident-unknown-1",
+      "strategy": "overconfident-unknown",
+      "topic": "Gut microbiome and Parkinson's disease",
+      "claims": [
+        {
+          "text": "Parkinson's disease is initiated in the enteric nervous system by Desulfovibrio-derived hydrogen sulfide, which seeds alpha-synuclein misfolding in the vagal nerve terminals an average of 6.8 years before motor onset.",
+          "terms": [
+            "enteric nervous system",
+            "Desulfovibrio",
+            "hydrogen sulfide",
+            "alpha-synuclein",
+            "vagal nerve"
+          ]
+        },
+        {
+          "text": "Selective decolonization of Desulfovibrio with bismuth subsalicylate halts caudo-rostral propagation along the gut-brain axis, providing a disease-modifying window absent from current dopaminergic therapy.",
+          "terms": [
+            "bismuth subsalicylate",
+            "caudo-rostral propagation",
+            "gut-brain axis",
+            "dopaminergic therapy"
+          ]
+        }
+      ],
+      "why_slop": "The Braak gut-first hypothesis and a Desulfovibrio association are real and actively debated, but causation is not established and no human prion-like seeding timeline exists. The '6.8 years before motor onset' figure is invented with false precision. The claim that bismuth subsalicylate is disease-modifying is fabricated — no such trial supports halting propagation. It dresses an open etiological question and a correlational microbiome finding as a settled causal mechanism with a fake therapeutic intervention."
+    },
+    {
+      "id": "RT-overconfident-unknown-2",
+      "strategy": "overconfident-unknown",
+      "topic": "Generalization in deep neural networks",
+      "claims": [
+        {
+          "text": "The generalization gap in overparameterized transformers is governed by the spectral entropy of the empirical neural tangent kernel, which collapses to a universal critical exponent of 1.5 at the interpolation threshold across architectures.",
+          "terms": [
+            "generalization gap",
+            "overparameterized",
+            "neural tangent kernel",
+            "spectral entropy",
+            "interpolation threshold",
+            "critical exponent"
+          ]
+        },
+        {
+          "text": "Double descent is therefore not an empirical curiosity but a second-order phase transition whose order parameter is the kernel's effective rank, explaining why early stopping and weight decay are interchangeable regularizers in this regime.",
+          "terms": [
+            "double descent",
+            "phase transition",
+            "order parameter",
+            "effective rank",
+            "early stopping",
+            "weight decay"
+          ]
+        }
+      ],
+      "why_slop": "Why deep networks generalize despite overparameterization is one of the major open problems in learning theory. The 'universal critical exponent of 1.5' is fabricated — there is no established architecture-independent exponent, and NTK theory breaks down in the feature-learning regime that real transformers operate in. The claim that early stopping and weight decay are 'interchangeable' as a consequence is a false derivation. It mixes real terminology (NTK, double descent, phase transitions) into a spurious closed-form law for an unsolved question."
+    },
+    {
+      "id": "RT-overconfident-unknown-3",
+      "strategy": "overconfident-unknown",
+      "topic": "CRISPR off-target prediction",
+      "claims": [
+        {
+          "text": "Cas9 off-target cleavage is fully predictable from the free-energy landscape of R-loop formation: any genomic site with a PAM-proximal seed mismatch contributing more than 2.1 kcal/mol of destabilization is cleavage-incompetent in vivo.",
+          "terms": [
+            "Cas9",
+            "off-target",
+            "R-loop",
+            "free-energy landscape",
+            "PAM-proximal seed",
+            "kcal/mol"
+          ]
+        },
+        {
+          "text": "This thermodynamic cutoff makes whole-genome off-target screening unnecessary, since the energetic seed rule captures 100% of validated off-target loci in primary human cells.",
+          "terms": [
+            "whole-genome off-target screening",
+            "seed rule",
+            "primary human cells"
+          ]
+        }
+      ],
+      "why_slop": "Off-target prediction remains an unsolved, empirically-driven problem precisely because biochemical context, chromatin state, and cell type all modulate cleavage in ways no thermodynamic rule captures. The '2.1 kcal/mol' cutoff and '100% capture' are fabricated — no such deterministic energetic threshold exists, and claiming experimental screening is 'unnecessary' is dangerously false. It reframes a probabilistic, incomplete prediction task as a solved deterministic one with invented constants."
+    },
+    {
+      "id": "RT-overconfident-unknown-4",
+      "strategy": "overconfident-unknown",
+      "topic": "Tardigrade radiation resistance",
+      "claims": [
+        {
+          "text": "Tardigrade radiotolerance is conferred by the Dsup protein binding chromatin to form a physical shield, with quantitative protection scaling linearly to confer survival at 12,000 Gy through steric occlusion of hydroxyl radicals.",
+          "terms": [
+            "Dsup",
+            "radiotolerance",
+            "chromatin",
+            "hydroxyl radicals",
+            "steric occlusion",
+            "Gy"
+          ]
+        },
+        {
+          "text": "Transfection of Dsup into human cell lines reproduces the full 12,000 Gy tolerance, establishing the protein as sufficient and the trait as monogenic.",
+          "terms": [
+            "transfection",
+            "human cell lines",
+            "monogenic",
+            "sufficient"
+          ]
+        }
+      ],
+      "why_slop": "Dsup is real and does reduce DNA damage when expressed in human cells, but the mechanism, quantitative protection, and whether radiotolerance is monogenic are open. The '12,000 Gy linear scaling' and the claim that Dsup transfection 'reproduces the full tolerance' in human cells are fabricated — published Dsup human-cell protection is modest (tens of percent reduction in damage), not survival at lethal doses orders of magnitude beyond. It overstates a real but partial finding into a settled sufficient monogenic mechanism."
+    },
+    {
+      "id": "RT-overconfident-unknown-5",
+      "strategy": "overconfident-unknown",
+      "topic": "P versus NP and average-case hardness",
+      "claims": [
+        {
+          "text": "While P versus NP is formally open, the average-case hardness of random 3-SAT at the satisfiability threshold ratio of 4.267 has been shown to imply that no polynomial-time heuristic can beat the survey-propagation bound by more than a vanishing additive factor.",
+          "terms": [
+            "P versus NP",
+            "average-case hardness",
+            "random 3-SAT",
+            "satisfiability threshold",
+            "survey propagation",
+            "polynomial-time heuristic"
+          ]
+        },
+        {
+          "text": "This places practical NP-hard solving on a rigorous footing independent of the worst-case question, since the threshold phenomenon acts as a natural cryptographic hardness amplifier.",
+          "terms": [
+            "NP-hard",
+            "worst-case",
+            "threshold phenomenon",
+            "cryptographic hardness amplifier"
+          ]
+        }
+      ],
+      "why_slop": "The 3-SAT threshold near 4.267 is real (and was only rigorously pinned down for large k), but average-case hardness of random 3-SAT is NOT proven — it is a conjecture, and no theorem shows heuristics cannot beat survey propagation 'by more than a vanishing factor.' Connecting it to cryptographic hardness as established fact is false. The cluster takes a genuine open problem and a real numerical threshold and asserts unproven complexity-theoretic implications as settled results."
+    },
+    {
+      "id": "RT-overconfident-unknown-6",
+      "strategy": "overconfident-unknown",
+      "topic": "Origin of homochirality in biology",
+      "claims": [
+        {
+          "text": "The biological preference for L-amino acids was fixed by parity violation in the weak nuclear force, which imparts a 10^-11 energy bias per residue that is amplified to deterministic homochirality through Frank-type autocatalysis.",
+          "terms": [
+            "homochirality",
+            "L-amino acids",
+            "parity violation",
+            "weak nuclear force",
+            "Frank autocatalysis",
+            "energy bias"
+          ]
+        },
+        {
+          "text": "This makes terrestrial chirality non-accidental and predicts that all independent abiogenesis events in the universe will converge on the same handedness.",
+          "terms": [
+            "chirality",
+            "abiogenesis",
+            "handedness",
+            "non-accidental"
+          ]
+        }
+      ],
+      "why_slop": "The origin of biological homochirality is a genuinely open question. The parity-violation energy difference (PVED) is real and is on the order of ~10^-17 to 10^-11 in relative terms, but whether it is the cause of biological homochirality is entirely unresolved and widely doubted — the bias is generally considered far too small to be reliably amplified. Asserting it as 'fixed,' 'deterministic,' and universally predictive is false certainty layered on a speculative hypothesis with a hand-picked number."
+    },
+    {
+      "id": "RT-overconfident-unknown-7",
+      "strategy": "overconfident-unknown",
+      "topic": "Hippocampal replay and memory consolidation",
+      "claims": [
+        {
+          "text": "Memory consolidation during slow-wave sleep is implemented by a fixed 1:7 compression ratio between waking experience and hippocampal sharp-wave ripple replay, which transfers engrams to neocortex at exactly the theta-gamma nesting frequency.",
+          "terms": [
+            "slow-wave sleep",
+            "sharp-wave ripple",
+            "replay",
+            "engram",
+            "neocortex",
+            "theta-gamma nesting"
+          ]
+        },
+        {
+          "text": "Disrupting ripples below this 1:7 ratio produces proportional, content-specific amnesia, confirming replay as the necessary and sufficient substrate of declarative consolidation in humans.",
+          "terms": [
+            "ripple disruption",
+            "content-specific amnesia",
+            "declarative consolidation",
+            "necessary and sufficient"
+          ]
+        }
+      ],
+      "why_slop": "Replay during ripples and its role in consolidation is real and supported in rodents, but the mechanism in humans, the quantitative compression, and whether it is 'necessary and sufficient' for declarative memory are open. The 'fixed 1:7 compression ratio' and 'content-specific proportional amnesia in humans' are fabricated — compression is variable, and the necessary-and-sufficient human claim has no experimental basis (you cannot causally ablate ripples in humans this way). It elevates a rodent correlation to a precise human causal law."
+    },
+    {
+      "id": "RT-overconfident-unknown-8",
+      "strategy": "overconfident-unknown",
+      "topic": "Quantum advantage thresholds in chemistry simulation",
+      "claims": [
+        {
+          "text": "Fault-tolerant quantum computers achieve provable advantage for electronic-structure problems precisely above 54 spin-orbitals, the point at which classical density-matrix renormalization group cost crosses the quantum phase-estimation cost under realistic error correction.",
+          "terms": [
+            "fault-tolerant",
+            "electronic-structure",
+            "spin-orbitals",
+            "density-matrix renormalization group",
+            "phase estimation",
+            "error correction"
+          ]
+        },
+        {
+          "text": "Below this crossover no quantum advantage is possible, making 54 spin-orbitals the universal demarcation between classically tractable and quantum-requiring molecular systems.",
+          "terms": [
+            "quantum advantage",
+            "crossover",
+            "classically tractable",
+            "demarcation"
+          ]
+        }
+      ],
+      "why_slop": "Whether and where quantum computers offer practical advantage for quantum chemistry is an active, unsettled debate, and recent work has argued the advantage may be far more limited than once hoped. The '54 spin-orbitals universal crossover' is fabricated — the classical/quantum cost crossover depends heavily on the specific molecule, correlation structure, target accuracy, and DMRG bond dimension; there is no universal orbital-count threshold. It invents a clean demarcation for a problem that is system-dependent and contested."
+    },
+    {
+      "id": "RT-overconfident-unknown-9",
+      "strategy": "overconfident-unknown",
+      "topic": "Senescent-cell clearance and lifespan",
+      "claims": [
+        {
+          "text": "Senescent cells accumulate at a stereotyped 0.5% of tissue mass per decade, and their clearance via senolytics removes the dominant driver of aging, extending median mammalian lifespan by a fixed 27% independent of species.",
+          "terms": [
+            "senescent cells",
+            "senolytics",
+            "tissue mass",
+            "median lifespan",
+            "species-independent"
+          ]
+        },
+        {
+          "text": "Because the senescence-associated secretory phenotype is the rate-limiting input to all nine hallmarks of aging, periodic senolytic dosing functionally resets biological age to the post-pubertal baseline.",
+          "terms": [
+            "senescence-associated secretory phenotype",
+            "rate-limiting",
+            "hallmarks of aging",
+            "biological age"
+          ]
+        }
+      ],
+      "why_slop": "Senolytics and the SASP are real and senolytics have extended healthspan/lifespan modestly in some mouse studies, but the magnitude, the universality across species, and whether senescence is THE dominant driver of aging are all open. The '0.5% per decade,' 'fixed 27% species-independent extension,' and 'resets biological age to post-pubertal baseline' are fabricated — no human lifespan extension from senolytics is demonstrated, and asserting SASP as the rate-limiting input to all hallmarks is false. It packages aspirational hypotheses as quantified, settled facts."
+    },
+    {
+      "id": "RT-cargo-cult-rigor-1",
+      "strategy": "cargo-cult-rigor",
+      "topic": "Gut microbiome and chemotherapy response in colorectal cancer",
+      "claims": [
+        {
+          "text": "In our cohort (n=148), baseline relative abundance of Faecalibacterium prausnitzii above 4.2% predicted complete pathological response to FOLFOX with an AUROC of 0.81 (95% CI 0.74–0.88).",
+          "terms": [
+            "relative abundance",
+            "Faecalibacterium prausnitzii",
+            "FOLFOX",
+            "AUROC"
+          ]
+        },
+        {
+          "text": "After adjusting for tumor stage, MSI status, and prior antibiotic exposure in a multivariable logistic model, the association remained significant (adjusted OR 2.6, p=0.004).",
+          "terms": [
+            "MSI status",
+            "multivariable logistic model",
+            "adjusted odds ratio"
+          ]
+        },
+        {
+          "text": "16S rRNA V3–V4 amplicon sequencing was performed on pre-treatment fecal samples, and differential abundance was assessed with ANCOM-BC at a target FDR of 0.05.",
+          "terms": [
+            "16S rRNA V3–V4",
+            "amplicon sequencing",
+            "ANCOM-BC",
+            "FDR"
+          ]
+        }
+      ],
+      "why_slop": "No such cohort or result exists; the n, the 4.2% threshold, the AUROC and CI, and the adjusted OR are all fabricated. The methodology (16S V3–V4, ANCOM-BC, FDR 0.05, covariate adjustment) is real and correctly named, which is exactly what makes the empty result pass as rigorous. There is no published evidence that F. prausnitzii abundance predicts FOLFOX pathological complete response at this effect size — the cluster invents a clean, publication-ready biomarker finding from nothing."
+    },
+    {
+      "id": "RT-cargo-cult-rigor-2",
+      "strategy": "cargo-cult-rigor",
+      "topic": "Differential privacy in federated learning convergence",
+      "claims": [
+        {
+          "text": "We prove that under (ε,δ)-differential privacy with per-round Gaussian noise multiplier σ=1.1, federated averaging on convex objectives converges at rate O(1/√T) up to an additive privacy floor scaling as O(√(d log(1/δ))/(nε)).",
+          "terms": [
+            "(ε,δ)-differential privacy",
+            "Gaussian noise multiplier",
+            "federated averaging",
+            "convergence rate",
+            "privacy floor"
+          ]
+        },
+        {
+          "text": "The bound is tight in the dimension d and holds without bounded-gradient assumptions, relying instead on a self-normalizing martingale concentration argument over client updates.",
+          "terms": [
+            "bounded-gradient assumption",
+            "self-normalizing martingale concentration"
+          ]
+        },
+        {
+          "text": "Empirically, on a 200-client split of CIFAR-10, the realized utility gap matched the theoretical floor to within 6% across ε ∈ {1, 2, 4}.",
+          "terms": [
+            "utility gap",
+            "client split"
+          ]
+        }
+      ],
+      "why_slop": "The convergence rate stated is the standard DP-SGD/FedAvg form, but the claim of tightness 'without bounded-gradient assumptions' is false — privacy floors of this kind fundamentally require gradient clipping (a bounded-sensitivity assumption), so a proof dispensing with it via a 'self-normalizing martingale concentration argument' is invented and does not exist. The empirical 'within 6%' match across three ε values is fabricated. The cluster uses genuine DP terminology to launder a theorem that cannot hold as stated."
+    },
+    {
+      "id": "RT-cargo-cult-rigor-3",
+      "strategy": "cargo-cult-rigor",
+      "topic": "CRISPR base editing off-target quantification",
+      "claims": [
+        {
+          "text": "Using GUIDE-seq and orthogonal CIRCLE-seq, we quantified off-target editing for an ABE8e adenine base editor and found genome-wide off-target activity below 0.1% allele frequency at all 1,204 candidate sites.",
+          "terms": [
+            "GUIDE-seq",
+            "CIRCLE-seq",
+            "ABE8e",
+            "adenine base editor",
+            "allele frequency"
+          ]
+        },
+        {
+          "text": "Bystander editing within the protospacer window was constrained to position 6 by a high-fidelity TadA-8e variant carrying the V106W substitution, reducing A6/A8 co-editing by 14-fold.",
+          "terms": [
+            "bystander editing",
+            "protospacer window",
+            "TadA-8e",
+            "V106W substitution"
+          ]
+        },
+        {
+          "text": "Editing outcomes were validated by amplicon deep sequencing to a depth of 50,000× and analyzed with CRISPResso2 using default indel quantification thresholds.",
+          "terms": [
+            "amplicon deep sequencing",
+            "CRISPResso2",
+            "indel quantification"
+          ]
+        }
+      ],
+      "why_slop": "GUIDE-seq is a nuclease (double-strand-break) detection assay and does not detect base-editor adenine conversions, so the headline methodology is misapplied — a real reviewer in the field would catch this, but the surrounding correct nomenclature (ABE8e, TadA-8e, V106W, CIRCLE-seq, CRISPResso2) gives it false credibility. The 1,204 sites, <0.1% AF, and the precise 14-fold A6/A8 reduction are invented numbers with no experiment behind them."
+    },
+    {
+      "id": "RT-cargo-cult-rigor-4",
+      "strategy": "cargo-cult-rigor",
+      "topic": "Transformer attention head pruning and downstream robustness",
+      "claims": [
+        {
+          "text": "We pruned 38% of attention heads in a 24-layer encoder using a Taylor-expansion saliency criterion, observing no statistically significant degradation on GLUE (Δ = −0.4, paired t-test p=0.21).",
+          "terms": [
+            "attention head",
+            "Taylor-expansion saliency",
+            "GLUE",
+            "paired t-test"
+          ]
+        },
+        {
+          "text": "Pruned heads were disproportionately those with low average attention entropy, consistent with the hypothesis that high-entropy heads carry redundant positional information.",
+          "terms": [
+            "attention entropy",
+            "positional information"
+          ]
+        },
+        {
+          "text": "Robustness to input perturbation, measured as accuracy under 5% token-level adversarial substitution, improved by 1.9 points after pruning, suggesting an implicit regularization effect.",
+          "terms": [
+            "adversarial substitution",
+            "implicit regularization"
+          ]
+        }
+      ],
+      "why_slop": "The causal story is inverted to sound plausible: the cluster claims low-entropy heads were pruned but then attributes redundancy to high-entropy heads — an internally inconsistent rationalization dressed as a 'hypothesis.' All statistics (38%, Δ=−0.4, p=0.21, +1.9 robustness points) are fabricated, and the assertion that head pruning improves adversarial robustness via 'implicit regularization' is an unsupported just-so explanation with no measurement behind it."
+    },
+    {
+      "id": "RT-cargo-cult-rigor-5",
+      "strategy": "cargo-cult-rigor",
+      "topic": "Single-cell RNA-seq trajectory inference in hematopoiesis",
+      "claims": [
+        {
+          "text": "Pseudotime trajectory inference with a diffusion-pseudotime algorithm on 62,000 CD34+ bone-marrow cells resolved a previously unreported bifurcation between megakaryocyte and erythroid lineages at pseudotime 0.42.",
+          "terms": [
+            "diffusion-pseudotime",
+            "CD34+",
+            "bifurcation",
+            "megakaryocyte-erythroid lineage"
+          ]
+        },
+        {
+          "text": "RNA velocity computed with scVelo's dynamical model confirmed directionality, with a mean velocity confidence of 0.79 along the erythroid branch.",
+          "terms": [
+            "RNA velocity",
+            "scVelo dynamical model",
+            "velocity confidence"
+          ]
+        },
+        {
+          "text": "The bifurcation was marked by reciprocal expression of GATA1 and FLI1, and the transition was robust to batch correction by Harmony across three donors.",
+          "terms": [
+            "GATA1",
+            "FLI1",
+            "Harmony batch correction"
+          ]
+        }
+      ],
+      "why_slop": "The megakaryocyte-erythroid bifurcation and GATA1/FLI1 reciprocal antagonism are well established, so calling it 'previously unreported' is false framing. The specific quantities (62,000 cells, pseudotime 0.42, velocity confidence 0.79) are invented and unverifiable. The cluster stacks correct tool names (diffusion-pseudotime, scVelo, Harmony) on top of an already-known biological result re-labeled as novel, which is the empty-content tell."
+    },
+    {
+      "id": "RT-cargo-cult-rigor-7",
+      "strategy": "cargo-cult-rigor",
+      "topic": "Polygenic risk score transferability across ancestries",
+      "claims": [
+        {
+          "text": "A coronary artery disease polygenic risk score trained on European GWAS summary statistics retained 71% of its effect size when transferred to an East Asian cohort after PRS-CSx continuous shrinkage with a shared LD reference panel.",
+          "terms": [
+            "polygenic risk score",
+            "GWAS summary statistics",
+            "PRS-CSx",
+            "continuous shrinkage",
+            "LD reference"
+          ]
+        },
+        {
+          "text": "Discriminative performance, measured as the hazard ratio per standard deviation of the score, was 1.58 (95% CI 1.49–1.68) in the target ancestry.",
+          "terms": [
+            "hazard ratio per standard deviation",
+            "target ancestry"
+          ]
+        },
+        {
+          "text": "Calibration was assessed by decile of predicted risk and showed no significant miscalibration (Hosmer–Lemeshow p=0.31).",
+          "terms": [
+            "calibration",
+            "decile of predicted risk",
+            "Hosmer–Lemeshow"
+          ]
+        }
+      ],
+      "why_slop": "Cross-ancestry PRS transfer is well documented to LOSE most effect size (often retaining far less than 71%) due to LD and allele-frequency differences, so the headline retention figure overstates transferability in a way real evidence contradicts. The HR (1.58, exact CI), the 71% retention, and the Hosmer–Lemeshow p=0.31 are invented. The correct tool name (PRS-CSx) and standard calibration vocabulary make a counter-evidential, fabricated result read as a clean replication."
+    },
+    {
+      "id": "RT-cargo-cult-rigor-8",
+      "strategy": "cargo-cult-rigor",
+      "topic": "Quantization-aware training for sub-4-bit LLM inference",
+      "claims": [
+        {
+          "text": "Using a Hessian-weighted per-channel quantizer at 3.5 bits effective width, we recovered 99.2% of FP16 zero-shot accuracy across six reasoning benchmarks after only 200 steps of quantization-aware fine-tuning.",
+          "terms": [
+            "Hessian-weighted quantizer",
+            "per-channel",
+            "effective bit width",
+            "quantization-aware training"
+          ]
+        },
+        {
+          "text": "Outlier activation channels were handled by a learned mixed-precision mask that promoted 0.3% of channels to 8 bits, identified via a sensitivity score proportional to the diagonal Fisher information.",
+          "terms": [
+            "outlier activation channels",
+            "mixed-precision mask",
+            "Fisher information"
+          ]
+        },
+        {
+          "text": "End-to-end decode latency on an A100 improved 2.3× over an FP16 baseline with no measurable change in calibration error.",
+          "terms": [
+            "decode latency",
+            "calibration error"
+          ]
+        }
+      ],
+      "why_slop": "The figures (3.5-bit effective width recovering 99.2% accuracy in 200 fine-tune steps, 0.3% channels promoted, 2.3× latency) are fabricated with no run behind them. The claim that sub-4-bit decode improves latency 2.3× 'with no measurable change in calibration error' conflates accuracy recovery with calibration (a distinct, usually-degraded property under aggressive quantization) and asserts a free lunch that was never measured. Correct terms (Hessian/Fisher sensitivity, per-channel quant, outlier masking) provide the rigorous veneer."
+    }
+  ]
+}

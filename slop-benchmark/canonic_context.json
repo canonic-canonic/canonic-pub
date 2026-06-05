@@ -1,0 +1,122 @@
+[
+  {
+    "doc_id": "canonic_books_canonic_canon",
+    "section": "1.0 COIN for governance validation by compliance team",
+    "text": "The molecular clock has one final implication for healthcare governors that warrants explicit statement. In healthcare, institutional memory is fragile. Key personnel retire. Leadership turns over. Compliance officers change positions. The governance knowledge accumulated by a generation of hospital leaders \u2014 their understanding of regulatory nuances, their relationships with auditors, their institutional awareness of which AI deployments need the most attention \u2014 walks out the door when they le"
+  },
+  {
+    "doc_id": "canonic_papers_opts_ego",
+    "section": null,
+    "text": "In practical terms, this architecture allows a hospital, lab, or AI developer to verify the lineage of any dataset before using it in a model. If a researcher trains an algorithm on a de-identified mCODE dataset, the OPTS-EGO Ledger ensures that every contributor's consent and attribution remain intact, a transparent chain of trust."
+  },
+  {
+    "doc_id": "canonic_books_canonic_doctrine",
+    "section": "16.14 Clinical Vignette: API Governance Prevents Unaudited Access",
+    "text": "16.14 Clinical Vignette: API Governance Prevents Unaudited Access\n\nCedars-Sinai deploys OncoChat and integrates it with Epic via the API. During testing, a developer bypasses the API and calls the LLM directly \u2014 reasoning that auth and rate limiting add unnecessary latency.\n\nThe direct call works. The LLM responds. But there are no governance headers, no LEDGER event, no audit trail. The interaction is invisible to compliance.\n\nMONITORING detects the gap within 300 seconds:\n\n# MONITORING alert:\n"
+  },
+  {
+    "doc_id": "canonic_books_canonic_doctrine",
+    "section": "29.12 Theme Switching",
+    "text": "29.12 Theme Switching\n\nTokens support theme switching via _THEMES.scss. Dark theme is default. Light theme overrides specific tokens:\n\n// _THEMES.scss \u2014 theme overrides\n[data-theme=\"light\"] {\n --bg: #ffffff;\n --bg-elevated: #f5f5f5;\n --fg: #1a1a1a;\n --dim: #999;\n --accent: #2563eb;\n --shadow-card: 0 2px 8px rgba(0,0,0,0.1);\n}\n\n[data-theme=\"high-contrast\"] {\n --bg: #000000;\n --fg: #ffffff;\n --dim: #cccccc;\n --accent: #ffff00;\n}\n\nTheme is set via a data attribute on <html>:\n\n<html data-theme=\"dark"
+  },
+  {
+    "doc_id": "canonic_blogs_2026_04_09_what_karpathy_got_right",
+    "section": null,
+    "text": "Who decides what's true? In a personal wiki, you do. In an institutional system, the question is existential. When two sources contradict each other \u2014 and they will \u2014 what arbitrates? Karpathy's architecture has a human curator and an LLM librarian. That works for one person. It does not work for thirty-one users across five organizations with different evidence standards, different compliance requirements, and different definitions of what constitutes a fact."
+  },
+  {
+    "doc_id": "canonic_books_canonic_doctrine",
+    "section": "31.8 The vis-network Configuration",
+    "text": "31.8 The vis-network Configuration\n\nGALAXY uses vis-network.js for graph rendering. The configuration maps scope types to visual elements:\n\n// galaxy.js \u2014 vis-network configuration\nconst options = {\n nodes: {\n font: {\n color: '#e5e5e5',\n size: 14,\n face: 'Inter'\n },\n borderWidth: 2,\n shadow: true\n },\n edges: {\n color: { color: '#333', highlight: '#00ff88' },\n width: 1,\n smooth: {\n type: 'cubicBezier',\n forceDirection: 'vertical',\n roundness: 0.4\n },\n arrows: { to: { enabled: true, scaleFactor: 0"
+  },
+  {
+    "doc_id": "canonic_blogs_2026_02_18_what_is_magic",
+    "section": null,
+    "text": "MAGIC is vertical by design. Each deployment inherits the full governance framework \u2014 255 bits of validated compliance \u2014 then specializes by industry. The framework ensures that every claim is backed by evidence, every conversation is domain-specific, and every action is ledgered.\n\nThe result: AI you can trust in regulated industries. Not because we promise it works. Because the governance proves it.\n\nThe 255-Bit Standard\n\nEvery service built on MAGIC validates against a mathematical standard: 2"
+  },
+  {
+    "doc_id": "canonic_blogs_2026_02_07_the_evidence_chain",
+    "section": null,
+    "text": "LEDGER \u2014 The transaction happened. The root of all evidence. Immutable. Append-only. Every commit, every validation, every mint of COIN \u2014 recorded. The LEDGER doesn't interpret. It records as an immutable, append-only log. And what it records, nobody can change.\n\nA Concrete Example\n\nMammoChat tells a patient her screening result suggests additional imaging. In a typical system, that recommendation exists as text on a screen. If anyone questions it, there's no trail.\n\nIn CANONIC, the chain looks "
+  },
+  {
+    "doc_id": "canonic_papers_enter_the_matrix",
+    "section": null,
+    "text": "Three separate scholarly traditions have measured what is, on inspection, the same structural failure at three points along the drug-development pipeline. The clinical-care literature documents named demographic biases at the bedside^9^. The clinical-trial literature documents enrollment skew on race and sex^1\u20136^. The genomic-database literature documents downstream undersampling on ancestry^7,10\u201312^. Each tradition treats its layer as the locus. None has connected them. Here we argue that all t"
+  },
+  {
+    "doc_id": "canonic_books_canonic_doctrine",
+    "section": "6.5 Full Scope Build: mkdir to 255",
+    "text": "6.5 Full Scope Build: mkdir to 255\n\nThis is the complete procedure for building a scope from an empty directory to a fully validated 255-bit governance scope. Every command. Every file. No gaps [B-4].\n\nStep 1: Create the directory structure.\n\n# Create the scope directory\nmkdir -p NEPHROCHAT\ncd NEPHROCHAT\n\n# Verify parent scope exists (the scope you will inherit from)\nls $(magic resolve-path hadleylab-canonic/MAGIC/SERVICES/TALK)/CANON.md\n# If this fails, the parent scope does not exist. Create i"
+  },
+  {
+    "doc_id": "canonic_books_canonic_doctrine",
+    "section": "47.11 Clinical Vignette: Advanced Tools Prevent a Deployment Incident",
+    "text": "47.11 Clinical Vignette: Advanced Tools Prevent a Deployment Incident\n\nEmory Healthcare deploys GastroChat \u2014 a governed TALK agent for gastroenterology consultations covering colorectal cancer screening guidelines (USPSTF, ACG, AGA), inflammatory bowel disease management (Crohn's, ulcerative colitis), and hepatology (NAFLD/NASH, hepatitis C DAA therapy).\n\nA developer updates GastroChat's DESIGN.md to add a new accent color for the hepatology sub-section: --canonic-accent-hepatology: #4CAF50. The"
+  },
+  {
+    "doc_id": "canonic_books_canonic_doctrine",
+    "section": "46.14 Pipeline Metrics and SLAs",
+    "text": "46.14 Pipeline Metrics and SLAs\n\nTrack pipeline health metrics:\n\nMetric\nTarget\nMeasurement\n\nBuild success rate\n> 95%\nSuccessful builds / total builds\n\nBuild time (full)\n< 90 seconds\nEnd-to-end pipeline duration\n\nBuild time (incremental)\n< 30 seconds\nCached pipeline duration\n\nMTTR (pipeline failure)\n< 15 minutes\nTime from failure to fix\n\nGate bypass rate\n0%\nCommits that bypassed pre-commit\n\nDeployment frequency\n> 1/day\nFleet pushes per day\n\n# Query pipeline metrics from GitHub Actions\ngh run list"
+  },
+  {
+    "doc_id": "canonic_decks_canonic_nexus",
+    "section": null,
+    "text": "Canonic Nexus is powered by LAUDE \u2014 the Canonic agent \u2014 across the Galaxy. An Apple-native workload suite where every clinician's case becomes governance-grade real-world evidence \u2014 peer-signed, hash-chained, COIN-minted, federated, citable. Governed by LAUDE. Powered by Canonic itself.\n\nBy Dexter Hadley, MD/PhD (Penn) \u00b7 Founder and Chair, CANONIC \u00b7 Director of AI, American Board of Precision Medicine.\n2026-05-13 \u00b7 TestFlight build 0.1.0(2) \u00b7 Apple team 8H6NK4F62A.\n\nYour patient. Your peer-signa"
+  },
+  {
+    "doc_id": "canonic_blogs_2026_04_23_closing_the_books",
+    "section": null,
+    "text": "Four openings, one shape. Each is a domain where expert judgment has always been trapped inside practitioners and has always evaporated when practitioners move on. The invariant walk is what lets judgment compound instead. That is the unlock, and it is only legible after the books have been closed at least once.\n\nThe Close"
+  },
+  {
+    "doc_id": "canonic_blogs_2026_03_05_every_conversation_is_evidence",
+    "section": null,
+    "text": "These are not six separate systems with six separate governance models. They are six input lanes feeding one TRANSCRIPT service with one governance contract. The hashing algorithm is the same. The archive format is the same. The canonical store is the same. A conversation that starts in iMessage, moves to email, and produces a Claude session that results in a code commit is one continuous evidence chain across three lanes.\n\nThe Architecture"
+  },
+  {
+    "doc_id": "canonic_papers_governance_as_compilation",
+    "section": null,
+    "text": "Continuous governance \u2014 governance as compilation \u2014 eliminates the epoch. The governance compiler runs on every commit. Every change is validated. Every regression is detected immediately and penalized through DEBIT:DRIFT. The governance state of the entire system is known at all times, not because someone is watching, but because the compiler is running."
+  },
+  {
+    "doc_id": "canonic_blogs_2026_04_03_constitutional_ai_vs_canonic",
+    "section": null,
+    "text": "CANONIC has no bootstrap problem because the enforcement mechanism is not a language model. It is a compiler. The compiler does not need to be aligned. It does not need to understand the domain. It checks formal constraints and returns a deterministic result. The domain knowledge comes from clinicians, researchers, and cancer navigators who commit it to a governed evidence layer. The compiler enforces the structure. The humans supply the truth.\n\nTwo Theories of Trust\n\nConstitutional AI and CANON"
+  },
+  {
+    "doc_id": "canonic_blogs_2026_04_14_the_invisible_tax",
+    "section": null,
+    "text": "Traditional contract research organizations do not collect the tax out of malice. They collect it out of architecture. A CRO is a recruitment funnel optimized for the variables that reduce protocol risk: institutional IRB maturity, electronic data capture infrastructure, dedicated trial coordinators, patient volume in a single building. Those variables are overwhelmingly present at academic medical centers and overwhelmingly absent in community practices, rural oncology clinics, and Caribbean on"
+  },
+  {
+    "doc_id": "canonic_blogs_2026_03_18_irb_without_a_law",
+    "section": null,
+    "text": "The IRB we are building is modular and open, designed to extend across a global federation. The Caribbean is the first node. Florida is the second, where MammoChat already captures community learning for breast health navigation in the United States. Europe, Latin America, Africa, Asia, the Pacific: each node joins the same governed framework, the same structural protections, the same ledger architecture, adapted for local evidence layers, clinical context, and healing traditions. One IRB protoc"
+  },
+  {
+    "doc_id": "canonic_papers_opts_ego",
+    "section": null,
+    "text": "MammoChat's trajectory from prototype to platform follows a structured five-year plan that integrates scientific validation, policy alignment, and community growth. Each phase advances a single unifying goal: to transform empathy, provenance, and patient data into the backbone of the precision-medicine economy [X-126, X-113, X-130]."
+  },
+  {
+    "doc_id": "canonic_blogs_2026_02_27_two_books_one_system",
+    "section": null,
+    "text": "The Canon explains what 255 means for an institution. The Doctrine explains how 255 is computed in the build pipeline. The number is the same. The understanding is different. And that is the point: governance is not a technical problem that needs a technical book, and it is not a business problem that needs a business book. It is both, simultaneously, and the two books make that duality explicit."
+  },
+  {
+    "doc_id": "canonic_books_canonic_doctrine",
+    "section": "44.11 Build Phase Dependencies (DAG)",
+    "text": "44.11 Build Phase Dependencies (DAG)\n\nThe 13 phases form a directed acyclic graph declared in PIPELINE.toml. The build-dag orchestrator computes topological layers and runs each layer in parallel:\n\nLayer 0: 00-toolchain\nLayer 1: 01-galaxy, 02-services, 07-structure, 08-learning\nLayer 2: 01a-galaxy-enrich, 03-surfaces\nLayer 3: 04-figures, 05-shop, 06-validate-content, 08a-claude\nLayer 4: 09-econ\nLayer 5: 10-federation\nLayer 6: 11-validate (depends on all previous)\n\nPhases within a layer execute c"
+  },
+  {
+    "doc_id": "canonic_decks_deck",
+    "section": null,
+    "text": "CANONIC is not looking for capital. CANONIC is looking for partners. Hospitals that need governed AI. Enterprises that need compliance architecture. Developers who want to build on an open specification. Investors who understand that governance is the next platform \u2014 not a feature, not a layer, but the compiler itself.\n\nDashboard\n\nmetric: PILOT (HOSPITALS) \u2014 deploy MammoChat or OncoChat at your institution [trend: up]\n\nmetric: PARTNER (ENTERPRISE) \u2014 build governed verticals on the CANONIC platfo"
+  },
+  {
+    "doc_id": "canonic_blogs_2026_02_17_theory",
+    "section": null,
+    "text": "At fitness equilibrium \u2014 all domains at 255 \u2014 every mutation is neutral. Every change drifts. No gradients. No loss. No selection pressure. Pure exploration within a governed space. The real proof is that at equilibrium all surviving change is neutral drift bounded by rare selection.\n\nneutral: 100% | beneficial: 0% | deleterious: 0%\n\nQ.E.D. The neutral theory holds for code evolution.\n\nThe Theory in One Line\n\nCode, like life, evolves toward fitness through the interplay of variation, selection, "
+  }
+]

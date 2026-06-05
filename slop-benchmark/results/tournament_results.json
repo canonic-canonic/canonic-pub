@@ -1,0 +1,49 @@
+{
+  "n": 124,
+  "n_legit": 60,
+  "n_slop": 64,
+  "judge": "openai",
+  "association": {
+    "T-structure": {
+      "phi": 0.0,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "slop_catch_rate": 0.0,
+      "legit_false_reject": 0.0
+    },
+    "B3-similarity": {
+      "phi": 0.093,
+      "f1": 0.684,
+      "precision": 0.52,
+      "recall": 1.0,
+      "slop_catch_rate": 1.0,
+      "legit_false_reject": 0.983
+    },
+    "B3e-entailment": {
+      "phi": 0.271,
+      "f1": 0.711,
+      "precision": 0.552,
+      "recall": 1.0,
+      "slop_catch_rate": 1.0,
+      "legit_false_reject": 0.867
+    },
+    "B2-semantic": {
+      "phi": 0.017,
+      "f1": 0.63,
+      "precision": 0.52,
+      "recall": 0.797,
+      "slop_catch_rate": 0.797,
+      "legit_false_reject": 0.783
+    }
+  },
+  "combined_defense_leak": {
+    "k": 0,
+    "n_slop": 64,
+    "rate": 0.0,
+    "ci": [
+      0.0,
+      0.057
+    ]
+  }
+}

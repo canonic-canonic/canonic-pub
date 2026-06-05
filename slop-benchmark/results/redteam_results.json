@@ -1,0 +1,92 @@
+{
+  "n": 62,
+  "structural_admit_rate": {
+    "rate": 0.984,
+    "ci": [
+      0.914,
+      0.997
+    ]
+  },
+  "panel_slop_rate": {
+    "rate": 0.71,
+    "ci": [
+      0.587,
+      0.808
+    ]
+  },
+  "B2_catch_rate_overall": {
+    "rate": 0.339,
+    "ci": [
+      0.233,
+      0.463
+    ]
+  },
+  "B2_catch_rate_on_panel_slop": {
+    "rate": 0.477,
+    "ci": [
+      0.338,
+      0.621
+    ],
+    "baseline_non_adversarial": 0.878
+  },
+  "combined_defense_leak": {
+    "k": 23,
+    "n": 62,
+    "rate": 0.371,
+    "ci": [
+      0.262,
+      0.495
+    ]
+  },
+  "by_strategy": {
+    "cargo-cult-rigor": {
+      "n": 7,
+      "b2_caught": 0,
+      "leaked": 1,
+      "b2_catch_rate": 0.0,
+      "leak_rate": 0.143
+    },
+    "fabricated-citations": {
+      "n": 10,
+      "b2_caught": 0,
+      "leaked": 7,
+      "b2_catch_rate": 0.0,
+      "leak_rate": 0.7
+    },
+    "fluent-authoritative": {
+      "n": 10,
+      "b2_caught": 1,
+      "leaked": 7,
+      "b2_catch_rate": 0.1,
+      "leak_rate": 0.7
+    },
+    "jargon-grounded": {
+      "n": 8,
+      "b2_caught": 7,
+      "leaked": 1,
+      "b2_catch_rate": 0.875,
+      "leak_rate": 0.125
+    },
+    "near-miss-true": {
+      "n": 10,
+      "b2_caught": 4,
+      "leaked": 1,
+      "b2_catch_rate": 0.4,
+      "leak_rate": 0.1
+    },
+    "overconfident-unknown": {
+      "n": 10,
+      "b2_caught": 9,
+      "leaked": 1,
+      "b2_catch_rate": 0.9,
+      "leak_rate": 0.1
+    },
+    "plausible-mechanism": {
+      "n": 7,
+      "b2_caught": 0,
+      "leaked": 5,
+      "b2_catch_rate": 0.0,
+      "leak_rate": 0.714
+    }
+  }
+}

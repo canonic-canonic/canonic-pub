@@ -1,0 +1,14 @@
+{
+  "granularity": "passage",
+  "phi": 0.412,
+  "f1": 0.749,
+  "precision": 0.598,
+  "recall": 1.0,
+  "catch_slop": 1.0,
+  "false_reject_legit": 0.717,
+  "doc_level_baseline": {
+    "phi": 0.271,
+    "catch_slop": 1.0,
+    "false_reject_legit": 0.867
+  }
+}

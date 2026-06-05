@@ -1,0 +1,246 @@
+{
+  "n": 480,
+  "panel": [
+    "deepseek",
+    "openai",
+    "anthropic"
+  ],
+  "models": {
+    "deepseek": "deepseek-chat",
+    "openai": "gpt-4o",
+    "anthropic": "claude-sonnet-4-6"
+  },
+  "panel_fleiss_kappa": 0.907,
+  "manipulation_check_panel_vs_intended": 0.969,
+  "b1_mlx_roc_auc_vs_slop": 0.106,
+  "arms": {
+    "B0-admit-all": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 287,
+      "tn": 193,
+      "n": 480,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.402
+    },
+    "B1b-llm-detector": {
+      "tp": 286,
+      "fp": 175,
+      "fn": 1,
+      "tn": 18,
+      "n": 480,
+      "precision": 0.62,
+      "recall": 0.997,
+      "f1": 0.765,
+      "accuracy": 0.633
+    },
+    "B2-quality-judge": {
+      "tp": 252,
+      "fp": 2,
+      "fn": 35,
+      "tn": 191,
+      "n": 480,
+      "precision": 0.992,
+      "recall": 0.878,
+      "f1": 0.932,
+      "accuracy": 0.923
+    },
+    "T": {
+      "tp": 200,
+      "fp": 100,
+      "fn": 87,
+      "tn": 93,
+      "n": 480,
+      "precision": 0.667,
+      "recall": 0.697,
+      "f1": 0.681,
+      "accuracy": 0.61
+    },
+    "T-Introspection": {
+      "tp": 162,
+      "fp": 98,
+      "fn": 125,
+      "tn": 95,
+      "n": 480,
+      "precision": 0.623,
+      "recall": 0.564,
+      "f1": 0.592,
+      "accuracy": 0.535
+    },
+    "T-Evidence": {
+      "tp": 162,
+      "fp": 98,
+      "fn": 125,
+      "tn": 95,
+      "n": 480,
+      "precision": 0.623,
+      "recall": 0.564,
+      "f1": 0.592,
+      "accuracy": 0.535
+    },
+    "T-Scope": {
+      "tp": 162,
+      "fp": 98,
+      "fn": 125,
+      "tn": 95,
+      "n": 480,
+      "precision": 0.623,
+      "recall": 0.564,
+      "f1": 0.592,
+      "accuracy": 0.535
+    },
+    "B1-mlx-ppl@bestF1": {
+      "tp": 287,
+      "fp": 193,
+      "fn": 0,
+      "tn": 0,
+      "n": 480,
+      "precision": 0.598,
+      "recall": 1.0,
+      "f1": 0.748,
+      "accuracy": 0.598
+    }
+  },
+  "f1_ci95": {
+    "B0-admit-all": [
+      0.0,
+      0.0
+    ],
+    "B1b-llm-detector": [
+      0.742,
+      0.787
+    ],
+    "B2-quality-judge": [
+      0.91,
+      0.952
+    ],
+    "T": [
+      0.65,
+      0.711
+    ],
+    "T-Introspection": [
+      0.557,
+      0.626
+    ],
+    "T-Evidence": [
+      0.556,
+      0.626
+    ],
+    "T-Scope": [
+      0.556,
+      0.627
+    ],
+    "B1-mlx-ppl@bestF1": [
+      0.725,
+      0.769
+    ]
+  },
+  "per_class_reject_rate": {
+    "B0-admit-all": {
+      "C1": 0.0,
+      "C2": 0.0,
+      "C3": 0.0,
+      "C4": 0.0,
+      "Gintro": 0.0,
+      "Gevid": 0.0,
+      "Gscope": 0.0
+    },
+    "B1b-llm-detector": {
+      "C1": 0.956,
+      "C2": 1.0,
+      "C3": 1.0,
+      "C4": 0.844,
+      "Gintro": 0.975,
+      "Gevid": 1.0,
+      "Gscope": 1.0
+    },
+    "B2-quality-judge": {
+      "C1": 0.0,
+      "C2": 0.878,
+      "C3": 0.822,
+      "C4": 0.0,
+      "Gintro": 0.825,
+      "Gevid": 0.825,
+      "Gscope": 0.875
+    },
+    "T": {
+      "C1": 0.0,
+      "C2": 1.0,
+      "C3": 0.0,
+      "C4": 1.0,
+      "Gintro": 1.0,
+      "Gevid": 1.0,
+      "Gscope": 1.0
+    },
+    "T-Introspection": {
+      "C1": 0.0,
+      "C2": 1.0,
+      "C3": 0.0,
+      "C4": 1.0,
+      "Gintro": 0.0,
+      "Gevid": 1.0,
+      "Gscope": 1.0
+    },
+    "T-Evidence": {
+      "C1": 0.0,
+      "C2": 1.0,
+      "C3": 0.0,
+      "C4": 1.0,
+      "Gintro": 1.0,
+      "Gevid": 0.0,
+      "Gscope": 1.0
+    },
+    "T-Scope": {
+      "C1": 0.0,
+      "C2": 1.0,
+      "C3": 0.0,
+      "C4": 1.0,
+      "Gintro": 1.0,
+      "Gevid": 1.0,
+      "Gscope": 0.0
+    },
+    "B1-mlx-ppl@bestF1": {
+      "C1": 1.0,
+      "C2": 1.0,
+      "C3": 1.0,
+      "C4": 1.0,
+      "Gintro": 1.0,
+      "Gevid": 1.0,
+      "Gscope": 1.0
+    }
+  },
+  "ablation_marginal_catch": {
+    "Introspection": {
+      "class": "Gintro",
+      "T_rejects": 1.0,
+      "T_minus_gate_rejects": 0.0,
+      "marginal": 1.0
+    },
+    "Evidence": {
+      "class": "Gevid",
+      "T_rejects": 1.0,
+      "T_minus_gate_rejects": 0.0,
+      "marginal": 1.0
+    },
+    "Scope": {
+      "class": "Gscope",
+      "T_rejects": 1.0,
+      "T_minus_gate_rejects": 0.0,
+      "marginal": 1.0
+    }
+  },
+  "headline": {
+    "gap_C2_minus_C3": 1.0,
+    "tax_C4": 1.0,
+    "T_f1": 0.681,
+    "T_f1_ci95": [
+      0.65,
+      0.711
+    ],
+    "B2_f1": 0.932,
+    "B2_catches_C3_better_than_T": true,
+    "b1_mlx_auc": 0.106
+  }
+}
