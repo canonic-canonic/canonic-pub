@@ -1,0 +1,8 @@
+canonic-pub — CANONIC public artifacts
+Copyright 2026 CANONIC Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License").
+This repository contains GOVERNANCE-SPEC-DERIVED reference code and paper
+supplements (the open, citable artifacts). It does NOT contain the .canonic
+runtime implementation (the patent-claimed block of verifiers), which is
+maintained privately and is not licensed hereunder.
